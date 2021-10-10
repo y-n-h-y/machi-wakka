@@ -1,11 +1,7 @@
 class CreateShops < ActiveRecord::Migration[5.2]
   def change
     create_table :shops do |t|
-      t.integer :item_id
-      t.integer :news_id
-      t.integer :review_id
-      t.integer :service_id
-      t.integer :top_banner_id
+      t.integer :customer_id
       t.string :name
       t.integer :shop_genre
       t.string :postal_code

@@ -1,8 +1,11 @@
 class Admin::NewsController < ApplicationController
   def new
+    @news = News.new
   end
 
   def create
+    @news = News.new(news_params)
+    @news.save
   end
 
   def index
@@ -18,5 +21,11 @@ class Admin::NewsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def news_params
+    params.require(:news).permit(:title, :image, :content)
   end
 end
