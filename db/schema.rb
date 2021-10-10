@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_155544) do
+ActiveRecord::Schema.define(version: 2021_10_10_023603) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,13 +38,74 @@ ActiveRecord::Schema.define(version: 2021_10_09_155544) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "nickname"
-    t.string "state"
+    t.integer "state", default: 0, null: false
     t.string "city"
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "news_id"
+    t.integer "review_id"
+    t.integer "service_id"
+    t.integer "top_banner_id"
+    t.string "name"
+    t.integer "shop_genre"
+    t.string "postal_code"
+    t.integer "state"
+    t.string "city"
+    t.string "address"
+    t.string "phone"
+    t.string "access"
+    t.integer "parking"
+    t.string "business_hours"
+    t.string "holiday"
+    t.integer "credit_card"
+    t.integer "cash_less"
+    t.string "homepage"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "top_banners", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
