@@ -1,2 +1,68 @@
-<h1>Admin::Shops#top</h1>
-<p>Find me in app/views/admin/shops/top.html.erb</p>
+<main>
+  <div class="head">
+    <h1>店舗作成フォーム</h1>
+  </div>
+  <div class="shop-create">
+    <% if Shop.any? %>
+    <ul>
+      <li>
+        <%= link_to admin_shop_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_shop_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_shop_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_shop_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_shop_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+    <% else %>
+    <ul>
+      <li>
+        <%= link_to new_admin_shop_path do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</main>
