@@ -1,6 +1,7 @@
 class Admin::NewsController < ApplicationController
   def new
     @news = News.new
+    @shop = current_admin.shop.id
   end
 
   def create
@@ -26,6 +27,6 @@ class Admin::NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news).permit(:title, :image, :content)
+    params.require(:news).permit(:shop_id, :title, :image, :content)
   end
 end

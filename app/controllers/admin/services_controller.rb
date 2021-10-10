@@ -1,6 +1,7 @@
 class Admin::ServicesController < ApplicationController
   def new
     @service = Service.new
+    @shop = current_admin.shop.id
   end
 
   def create
@@ -26,6 +27,6 @@ class Admin::ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:title, :content)
+    params.require(:service).permit(:shop_id, :title, :content)
   end
 end

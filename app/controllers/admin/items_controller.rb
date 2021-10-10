@@ -1,6 +1,7 @@
 class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
+    @shop = current_admin.shop.id
   end
 
   def create
@@ -26,6 +27,6 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :image, :content)
+    params.require(:item).permit(:shop_id, :name, :image, :content)
   end
 end
