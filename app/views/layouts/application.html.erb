@@ -5,11 +5,41 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
   </head>
 
   <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+        <% if admin_signed_in? %>
+          <%= link_to image_tag('logo.png'), admin_path %>
+        <% else %>
+          <%= link_to image_tag('logo.png'), root_path %>
+        <% end %>
+        </div>
+        <nav>
+          <ul>
+            <% if customer_signed_in? %>
+            <li>ようこそ○○さん</li>
+            <li><%= link_to "ログアウト", destroy_customer_session_path %></li>
+            <li><%= link_to customer_path do %><i class="fas fa-user"></i><% end %></li>
+            <% elsif admin_signed_in? %>
+            <li><%= link_to "ページ作成", admin_shop_top_path %></li>
+            <li><%= link_to "マイページ", admin_path %></li>
+            <li><%= link_to "ログアウト", destroy_admin_session_path %></li>
+            <% else %>
+            <li><%= link_to "会員登録", new_customer_registration_path %></li>
+            <li><%= link_to "ログイン", new_customer_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
+    <footer></footer>
   </body>
 </html>

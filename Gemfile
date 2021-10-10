@@ -48,7 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  
+
   gem 'devise'
 
   gem "refile", require: "refile/rails", github: 'manfe/refile'
@@ -59,8 +59,10 @@ group :development do
   gem "enum_help"
 
   gem 'pry-byebug'
-  
+
   gem 'rubocop', require: false
+
+  gem "jquery-rails"
 end
 
 group :test do

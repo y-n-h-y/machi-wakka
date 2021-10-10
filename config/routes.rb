@@ -14,22 +14,25 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: "homes#top"
-    resources :reviews
-    resources :items
-    resources :news
-    resources :services
-    resources :shops
+    resources :shops do
+      resources :reviews
+      resources :items
+      resources :news
+      resources :services
+    end
     resources :customers
   end
 
   namespace :admin do
     get '/' => 'homes#top'
-    resources :news
-    resources :items
-    resources :services
-    resources :top_banners
-    resources :shops
-    resources :reviews
+    get '/shop/top' => 'shops#top'
+    resources :shops do
+      resources :news
+      resources :items
+      resources :services
+      resources :top_banners
+      resources :reviews
+    end
     resources :configurations
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
