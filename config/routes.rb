@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'admins/show'
+    get 'admins/edit'
+    get 'admins/update'
+    get 'admins/confirm'
+    get 'admins/withdrawal'
+  end
     devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
@@ -33,7 +40,7 @@ Rails.application.routes.draw do
       resources :top_banners
       resources :reviews
     end
-    resources :configurations
+    resources :admins
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

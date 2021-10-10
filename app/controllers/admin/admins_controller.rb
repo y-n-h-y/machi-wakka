@@ -1,5 +1,6 @@
-class Admin::ConfigurationsController < ApplicationController
+class Admin::AdminsController < ApplicationController
   def show
+    @admin = current_admin
   end
 
   def edit
