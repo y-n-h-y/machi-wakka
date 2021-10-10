@@ -59,6 +59,8 @@ group :development do
   gem "enum_help"
 
   gem 'pry-byebug'
+  
+  gem 'rubocop', require: false
 end
 
 group :test do

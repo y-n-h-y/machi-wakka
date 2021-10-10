@@ -1,0 +1,9 @@
+class CreateTopBanners < ActiveRecord::Migration[5.2]
+  def change
+    create_table :top_banners do |t|
+      t.string :image
+
+      t.timestamps
+    end
+  end
+end
