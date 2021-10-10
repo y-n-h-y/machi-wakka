@@ -19,10 +19,8 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "company_name"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
+    t.string "name"
+    t.string "name_kana"
     t.string "phone"
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false

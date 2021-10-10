@@ -28,7 +28,7 @@
             <li><%= link_to "ログアウト", destroy_customer_session_path %></li>
             <li><%= link_to customer_path do %><i class="fas fa-user"></i><% end %></li>
             <% elsif admin_signed_in? %>
-            <li><%= link_to "ページ作成", admin_shop_top_path %></li>
+            <li><%= link_to "店舗作成", admin_shop_top_path %></li>
             <li><%= link_to "マイページ", admin_path %></li>
             <li><%= link_to "ログアウト", destroy_admin_session_path %></li>
             <% else %>

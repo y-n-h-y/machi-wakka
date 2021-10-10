@@ -33,10 +33,8 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.string :company_name
-      t.string :last_name
-      t.string :first_name
-      t.string :last_name_kana
-      t.string :first_name_kana
+      t.string :name
+      t.string :name_kana
       t.string :phone
       t.boolean :is_active, null: false, default: true
 
