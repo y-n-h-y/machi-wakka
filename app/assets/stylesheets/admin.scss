@@ -7,7 +7,6 @@ main {
       padding: 35px 0;
     }
   }
-
   // マイページ
   .menu {
     width: 90%;
@@ -18,9 +17,50 @@ main {
       justify-content: space-between;
       li {
         width: calc(90%/3);
-        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         .menu_content {
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+          img {
+            width: 80%;
+          }
+          h2 {
+            padding: 10px 0;
+            color: #222222;
+          }
+          p {
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            text-align: justify;
+            text-justify: distribute;
+            font-size: 0.9rem;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+  //店舗作成フォームページ
+  .shop-create {
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 0 50px 0;
+    p {
+      font-size: 1.1rem;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: calc(90%/4);
+        margin-top: 40px;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        .shop-create_content {
           width: 90%;
           margin: 0 auto;
           text-align: center;
