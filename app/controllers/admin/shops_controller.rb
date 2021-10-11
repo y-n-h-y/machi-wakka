@@ -1,6 +1,4 @@
 class Admin::ShopsController < ApplicationController
-  def top
-  end
 
   def new
     @shop = Shop.new
@@ -13,6 +11,9 @@ class Admin::ShopsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def top
   end
 
   def show

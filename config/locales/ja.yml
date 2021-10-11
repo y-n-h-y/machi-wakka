@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  enums:
+    shop:
+      shop_genre:
+        gourmet: 'グルメ'
+        shopping: 'ショッピング'
+        relaxation: 'ボディケア'
+        beauty_salon: 'ヘアサロン'
+        school: '予備校・学習塾'
+        private_school: '習い事・スクール'
+        dental: '歯科・矯正歯科'
+        hospital: '医院・クリニック'
+        outdoor: 'アウトドア・レジャー'
+        second_shop: '中古・リサイクル'
+        pet: 'ペット・動物'
+        life_support: '暮らし・生活サポート'
+        lear_estate: '不動産'
+        ceremonial: '冠婚葬祭'

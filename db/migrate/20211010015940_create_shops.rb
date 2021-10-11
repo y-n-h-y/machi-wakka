@@ -1,7 +1,6 @@
 class CreateShops < ActiveRecord::Migration[5.2]
   def change
     create_table :shops do |t|
-      t.integer :customer_id
       t.string :name
       t.integer :shop_genre
       t.string :postal_code
@@ -10,13 +9,13 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :phone
       t.string :access
-      t.integer :parking
+      t.string :parking
       t.string :business_hours
       t.string :holiday
       t.integer :credit_card
       t.integer :cash_less
       t.string :homepage
-      t.string :logo
+      t.string :logo_id
 
       t.timestamps
     end
