@@ -14,6 +14,7 @@ class Admin::ShopsController < ApplicationController
   end
 
   def top
+    @shop = Shop.ids
   end
 
   def show
