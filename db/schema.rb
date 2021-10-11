@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   create_table "items", force: :cascade do |t|
     t.integer "shop_id"
     t.string "name"
-    t.string "image"
+    t.string "image_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   create_table "news", force: :cascade do |t|
     t.integer "shop_id"
     t.string "title"
-    t.string "image"
+    t.string "image_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "shop_id"
+    t.integer "customer_id"
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
@@ -80,7 +81,6 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "shops", force: :cascade do |t|
-    t.integer "customer_id"
     t.string "name"
     t.integer "shop_genre"
     t.string "postal_code"
@@ -89,20 +89,20 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
     t.string "address"
     t.string "phone"
     t.string "access"
-    t.integer "parking"
+    t.string "parking"
     t.string "business_hours"
     t.string "holiday"
     t.integer "credit_card"
     t.integer "cash_less"
     t.string "homepage"
-    t.string "logo"
+    t.string "logo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "top_banners", force: :cascade do |t|
     t.integer "shop_id"
-    t.string "image"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

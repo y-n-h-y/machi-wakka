@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'admins/show'
-    get 'admins/edit'
-    get 'admins/update'
-    get 'admins/confirm'
-    get 'admins/withdrawal'
-  end
     devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
@@ -32,8 +25,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'homes#top'
-    get '/shop/top' => 'shops#top'
     resources :shops do
+      collection do
+        get :top
+      end
       resources :news
       resources :items
       resources :services
