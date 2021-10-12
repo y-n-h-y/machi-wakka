@@ -23,3 +23,8 @@ ja:
         life_support: '暮らし・生活サポート'
         lear_estate: '不動産'
         ceremonial: '冠婚葬祭'
+
+    news:
+      genre:
+        info: 'お知らせ'
+        blog: 'ブログ'

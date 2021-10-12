@@ -1,2 +1,20 @@
-<h1>Admin::Services#new</h1>
-<p>Find me in app/views/admin/services/new.html.erb</p>
+<main>
+  <div class="head">
+    <h1>サービス作成フォーム</h1>
+  </div>
+  <%= form_with model: @service, url: {controller: 'services', action: 'create' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form_group">
+      <%= f.label :content, "内容説明" %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

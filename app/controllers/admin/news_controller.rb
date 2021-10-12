@@ -1,7 +1,6 @@
 class Admin::NewsController < ApplicationController
   def new
     @news = News.new
-    @shop = current_admin.shop.id
   end
 
   def create
