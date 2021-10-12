@@ -1,7 +1,6 @@
 class Admin::ServicesController < ApplicationController
   def new
     @service = Service.new
-    @shop = current_admin.shop.id
   end
 
   def create

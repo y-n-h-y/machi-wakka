@@ -1,2 +1,28 @@
-<h1>Admin::News#new</h1>
-<p>Find me in app/views/admin/news/new.html.erb</p>
+<main>
+  <div class="head">
+    <h1>ニュース作成フォーム</h1>
+  </div>
+  <%= form_with model: @news, url: {controller: 'news', action: 'create' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :genre, "ニュースのジャンル" %>
+      <%= f.select :genre, News.genres_i18n.invert, {} %>
+    </div>
+    <div class="form_group">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form_group">
+      <%= f.label :image, "画像" %>
+      <%= f.attachment_field :image, class: 'logo-form' %>
+    </div>
+    <div class="form_group">
+      <%= f.label :content, "内容説明" %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

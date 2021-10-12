@@ -1,0 +1,16 @@
+<main>
+  <div class="head">
+    <h1>トップバナー作成フォーム</h1>
+  </div>
+  <%= form_with model: @top_banner, url: {controller: 'top_banners', action: 'create' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :image, "画像" %>
+      <%= f.attachment_field :image, class: 'logo-form' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

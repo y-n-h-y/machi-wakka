@@ -14,8 +14,9 @@
         </div>
         <% end %>
       </li>
+      <% if TopBanner.any? %>
       <li>
-        <%= link_to  do %>
+        <%= link_to admin_shop_top_banners_path(@shop) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>トップバナー</h2>
@@ -23,8 +24,20 @@
         </div>
         <% end %>
       </li>
+      <% else %>
       <li>
-        <%= link_to  do %>
+        <%= link_to new_admin_shop_top_banner_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>トップバナー</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% if Service.any? %>
+      <li>
+        <%= link_to admin_shop_services_path(@shop) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>サービス</h2>
@@ -32,8 +45,20 @@
         </div>
         <% end %>
       </li>
+      <% else %>
       <li>
-        <%= link_to  do %>
+        <%= link_to new_admin_shop_service_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>サービス</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% if Item.any? %>
+      <li>
+        <%= link_to admin_shop_items_path(@shop) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>商品/メニュー</h2>
@@ -41,8 +66,20 @@
         </div>
         <% end %>
       </li>
+      <% else %>
       <li>
-        <%= link_to  do %>
+        <%= link_to new_admin_shop_item_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>商品/メニュー</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% if News.any? %>
+      <li>
+        <%= link_to admin_shop_news_index_path(@shop) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>ニュース</h2>
@@ -50,6 +87,17 @@
         </div>
         <% end %>
       </li>
+      <% else %>
+      <li>
+        <%= link_to new_admin_shop_news_path(@shop) do %>
+        <div class="shop-create_content">
+          <%= image_tag('shop-create') %>
+          <h2>ニュース</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
     </ul>
     <% else %>
     <p>※店舗情報の作成後、全てのフォームを作成いただけます。</p>

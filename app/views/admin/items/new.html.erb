@@ -1,2 +1,28 @@
-<h1>Admin::Items#new</h1>
-<p>Find me in app/views/admin/items/new.html.erb</p>
+<main>
+  <div class="head">
+    <h1>商品/メニュー作成フォーム</h1>
+  </div>
+  <%= form_with model: @item, url: {controller: 'items', action: 'create' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :image, "画像" %>
+      <%= f.attachment_field :image, class: 'logo-form' %>
+    </div>
+    <div class="form_group">
+      <%= f.label :name, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form_group">
+      <%= f.label :content, "商品説明" %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="form_group">
+      <%= f.label :price, "価格（税抜き/数字のみ）" %>
+      <%= f.text_field :price %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

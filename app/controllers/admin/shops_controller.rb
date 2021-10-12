@@ -6,6 +6,7 @@ class Admin::ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
+
     if @shop.save
       redirect_to admin_shop_path(@shop)
     else

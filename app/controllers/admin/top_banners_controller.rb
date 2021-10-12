@@ -2,7 +2,6 @@ class Admin::TopBannersController < ApplicationController
 
   def new
     @top_banner = TopBanner.new
-    @shop = current_admin.shop.id
   end
 
   def create
@@ -11,6 +10,7 @@ class Admin::TopBannersController < ApplicationController
   end
 
   def index
+    @shop = Shop.ids
   end
 
   def edit
@@ -25,7 +25,7 @@ class Admin::TopBannersController < ApplicationController
   private
 
   def top_banner_params
-    params.require(:top_banner).permit(:shop_id, :title, :content)
+    params.require(:top_banner).permit(:image)
   end
 
 end
