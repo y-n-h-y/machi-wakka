@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "admin_id"
     t.integer "shop_id"
     t.string "name"
     t.string "image_id"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "news", force: :cascade do |t|
+    t.integer "admin_id"
     t.integer "shop_id"
     t.string "title"
     t.string "image_id"
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer "admin_id"
     t.integer "shop_id"
     t.integer "customer_id"
     t.string "title"
@@ -74,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "services", force: :cascade do |t|
+    t.integer "admin_id"
     t.integer "shop_id"
     t.string "title"
     t.text "content"
@@ -82,6 +86,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "shops", force: :cascade do |t|
+    t.integer "admin_id"
     t.string "name"
     t.integer "shop_genre"
     t.string "postal_code"
@@ -102,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
   end
 
   create_table "top_banners", force: :cascade do |t|
+    t.integer "admin_id"
     t.integer "shop_id"
     t.string "image_id"
     t.datetime "created_at", null: false
