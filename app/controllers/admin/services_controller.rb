@@ -1,11 +1,16 @@
 class Admin::ServicesController < ApplicationController
   def new
     @service = Service.new
+    @shop = Shop.ids
   end
 
   def create
     @service = Service.new(service_params)
-    @service.save
+    if @service.save
+      redirect_to admin_shop_services_path
+    else
+      render :new
+    end
   end
 
   def index

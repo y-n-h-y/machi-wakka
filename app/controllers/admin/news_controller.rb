@@ -1,11 +1,16 @@
 class Admin::NewsController < ApplicationController
   def new
     @news = News.new
+    @shop = Shop.ids
   end
 
   def create
     @news = News.new(news_params)
-    @news.save
+    if @news.save
+      redirect_to admin_shop_news_index_path
+    else
+      render :new
+    end
   end
 
   def index

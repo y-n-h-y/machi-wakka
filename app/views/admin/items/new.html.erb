@@ -10,7 +10,7 @@
     </div>
     <div class="form_group">
       <%= f.label :name, "タイトル" %>
-      <%= f.text_field :title %>
+      <%= f.text_field :name %>
     </div>
     <div class="form_group">
       <%= f.label :content, "商品説明" %>
@@ -20,6 +20,7 @@
       <%= f.label :price, "価格（税抜き/数字のみ）" %>
       <%= f.text_field :price %>
     </div>
+    <%= f.hidden_field :shop_id, :value => @shop %>
     <div class="actions">
       <%= f.submit "登録する" %>
     </div>
