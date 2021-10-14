@@ -14,6 +14,7 @@ class Admin::NewsController < ApplicationController
   end
 
   def index
+    @news = News.all
   end
 
   def show
