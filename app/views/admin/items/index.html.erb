@@ -1,3 +1,6 @@
 <h1>Admin::Items#index</h1>
 <p><%= link_to "新規作成", new_admin_shop_item_path %></p>
-<p><%= link_to "編集する", edit_admin_shop_item_path(@item) %></p>
+<% @items.each do |item| %>
+<p><%= link_to item.name, admin_shop_item_path(@item, @shop) %></p>
+<% end %>
+<p><%= link_to "編集する", edit_admin_shop_item_path(@item, @shop) %></p>
