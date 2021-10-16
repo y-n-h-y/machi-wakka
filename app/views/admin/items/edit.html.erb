@@ -1,6 +1,11 @@
 <main>
   <div class="head">
-    <h1>商品/メニュー編集フォーム</h1>
+    <h1>メニュー/商品編集フォーム</h1>
+  </div>
+  <div class="layer">
+    <%= link_to admin_shop_items_path do %>
+    <i class="fas fa-chevron-left">&thinsp;メニーュ/商品一覧に戻る</i>
+    <% end %>
   </div>
   <%= form_with model: @item, url: {controller: 'items', action: 'update' }, local:true do |f| %>
   <div class="form">
@@ -20,7 +25,6 @@
       <%= f.label :price, "価格（税抜き/数字のみ）" %>
       <%= f.text_field :price %>
     </div>
-    <%= f.hidden_field :shop_id, :value => @shop %>
     <div class="actions">
       <%= f.submit "登録する" %>
     </div>

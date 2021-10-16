@@ -1,6 +1,32 @@
-<h1>Admin::News#index</h1>
+<main>
+  <div class="head">
+    <h1>ニュース一覧</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_admin_shops_path do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗トップページに戻る</i>
+    <% end %>
+  </div>
+  <div class="content-list news">
+      <div class="new-action">
+        <%= link_to new_shop_news_path do %>
+        <i class="fas fa-plus">&thinsp;新規作成</i>
+        <% end %>
+      </div>
+      <ul>
+        <li>タイトル</li>
+        <li></li>
+      </ul>
+      <ul>
+        <% @current_news.each do |news| %>
+        <li><%= link_to news.title, admin_shop_news_path(@shop, news) %></li>
+        <li></li>
+        <% end %>
+      </ul>
+  </div>
+</main>
 <p><%= link_to "新規作成", new_admin_shop_news_path %></p>
 <% @current_news.each do |news| %>
-<p><%= link_to news.title, admin_shop_news_path(@news, @shop) %></p>
+<p></p>
 <% end %>
 

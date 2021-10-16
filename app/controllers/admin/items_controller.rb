@@ -1,11 +1,11 @@
 class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
-    @shop = current_admin.shop.id
   end
 
   def create
     @item = Item.new(item_params)
+    @item.shop_id = current_admin.shop.id
    if  @item.save
      redirect_to admin_shop_items_path
    else
@@ -15,7 +15,7 @@ class Admin::ItemsController < ApplicationController
 
   def index
     @items = current_admin.shop.items
-    @shop = Shop.ids
+    @shop = current_admin.shop.id
   end
 
   def show
@@ -28,6 +28,11 @@ class Admin::ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to admin_shop_items_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -39,6 +44,6 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:shop_id, :name, :image, :content, :price)
+    params.require(:item).permit(:name, :image, :content, :price)
   end
 end

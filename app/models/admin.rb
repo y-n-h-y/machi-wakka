@@ -9,5 +9,5 @@ class Admin < ApplicationRecord
   has_many :services, dependent: :destroy
   has_many :top_banners, dependent: :destroy
 
-  has_one :shop
+  has_one :shop, dependent: :destroy
 end
