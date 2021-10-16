@@ -14,7 +14,7 @@ class Admin::ServicesController < ApplicationController
   end
 
   def index
-    @services = current_admin.shop.service
+    @services = current_admin.shop.services
     @shop = Shop.ids
     @service = Service.find(params[:shop_id])
   end
