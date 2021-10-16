@@ -1,8 +1,13 @@
 <main>
   <div class="head">
-    <h1>商品/メニュー一覧</h1>
+    <h1>メニュー/商品一覧</h1>
   </div>
-  <div class="content-list">
+  <div class="layer">
+    <%= link_to top_admin_shops_path do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗トップページに戻る</i>
+    <% end %>
+  </div>
+  <div class="content-list item">
       <div class="new-action">
         <%= link_to new_admin_shop_item_path do %>
         <i class="fas fa-plus">&thinsp;新規作成</i>
@@ -10,7 +15,7 @@
       </div>
     <ul>
         <% @items.each do |item| %>
-        <%= link_to admin_shop_item_path(item, @shop) do %>
+        <%= link_to admin_shop_item_path(@shop, item) do %>
         <li>
             <div class="image">
                 <% if item.image.nil? %>
@@ -20,15 +25,16 @@
                 <% end %>
             </div>
             <h2 class="list-title"><%= item.name %></h2>
+            <p class="mony">¥<%= item.tax_price.to_s(:delimited) %></p>
             <div class="edit-action">
               <p>
-                <%= link_to edit_admin_shop_item_path(item, @shop) do %>
+                <%= link_to edit_admin_shop_item_path(@shop, item) do %>
                 <i class="far fa-edit">&thinsp;編集する</i>
                 <% end %>
               </p>
               <p>
-                <%= link_to admin_shop_item_path(item, @shop), method: :delete do %>
-                <i class="far fa-trash-alt">削除する</i>
+                <%= link_to admin_shop_item_path(@shop, item), method: :delete do %>
+                <i class="far fa-trash-alt">&thinsp;削除する</i>
                 <% end %>
               </p>
             </div>

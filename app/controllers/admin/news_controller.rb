@@ -1,11 +1,11 @@
 class Admin::NewsController < ApplicationController
   def new
     @news = News.new
-    @shop = Shop.ids
   end
 
   def create
     @news = News.new(news_params)
+    @news.shop_id = current_admin.shop.id
     if @news.save
       redirect_to admin_shop_news_index_path
     else
@@ -15,8 +15,7 @@ class Admin::NewsController < ApplicationController
 
   def index
     @current_news = current_admin.shop.news
-    @shop = Shop.ids
-    @news = News.find(params[:shop_id])
+    @shop = current_admin.shop.id
   end
 
   def show
@@ -24,9 +23,11 @@ class Admin::NewsController < ApplicationController
   end
 
   def edit
+    @news = News.find(params[:id])
   end
 
   def update
+    @news = News.find(params[:id])
   end
 
   def destroy
