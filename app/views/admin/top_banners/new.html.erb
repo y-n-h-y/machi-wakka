@@ -5,10 +5,9 @@
   <%= form_with model: @top_banner, url: {controller: 'top_banners', action: 'create' }, local:true do |f| %>
   <div class="form">
     <div class="form_group">
-      <%= f.label :image, "画像" %>
+      <%= f.label :image, "画像をアップロードしてください" %>
       <%= f.attachment_field :image, class: 'logo-form' %>
     </div>
-    <%= f.hidden_field :shop_id, :value => @shop %>
     <div class="actions">
       <%= f.submit "登録する" %>
     </div>
