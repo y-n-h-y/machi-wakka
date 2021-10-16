@@ -17,6 +17,7 @@ class Admin::TopBannersController < ApplicationController
   def index
     @top_banners = current_admin.shop.top_banners
     @shop = Shop.ids
+    @top_banner = TopBanner.find(params[:shop_id])
   end
 
   def edit
