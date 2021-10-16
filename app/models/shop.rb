@@ -6,6 +6,8 @@ class Shop < ApplicationRecord
   has_many :news, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
+  belongs_to :admin
+
   attachment :logo
 
   enum shop_genre: { gourmet: 0, shopping: 1, relaxation: 2, beauty_salon: 3, school: 4, private_school: 5,

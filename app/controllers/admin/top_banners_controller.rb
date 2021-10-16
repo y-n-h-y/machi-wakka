@@ -15,6 +15,7 @@ class Admin::TopBannersController < ApplicationController
   end
 
   def index
+    @top_banners = current_admin.shop.top_banners
     @shop = Shop.ids
   end
 
