@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_023603) do
 
   create_table "news", force: :cascade do |t|
     t.integer "shop_id"
+    t.integer "genre"
     t.string "title"
     t.string "image_id"
     t.text "content"

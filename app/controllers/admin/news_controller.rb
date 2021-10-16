@@ -28,14 +28,22 @@ class Admin::NewsController < ApplicationController
 
   def update
     @news = News.find(params[:id])
+    if @news.update(news_params)
+      redirect_to admin_shop_news_path(@news)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    news = News.find(params[:id])
+    news.destroy
+    redirect_to admin_shop_news_index_path
   end
 
   private
 
   def news_params
-    params.require(:news).permit(:shop_id, :title, :image, :content)
+    params.require(:news).permit(:shop_id, :genre, :title, :image, :content)
   end
 end

@@ -20,8 +20,7 @@ main {
         font-weight: 600;
       }
     }
-  }
-  // マイページ
+  } // マイページ
   .menu {
     width: 90%;
     margin: 0 auto;
@@ -56,8 +55,7 @@ main {
         }
       }
     }
-  }
-  //店舗作成フォームページ
+  } //店舗作成フォームページ
   .shop-create {
     width: 90%;
     margin: 0 auto;
@@ -97,8 +95,7 @@ main {
         }
       }
     }
-  }
-  //商品一覧ページ
+  } //一覧ページヘッダーテンプレート
   .content-list {
     width: 90%;
     margin: 0 auto;
@@ -124,11 +121,112 @@ main {
         }
       }
     }
-    ul {
+  } //商品詳細ページ
+  .menu-content {
+    width: 800px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 100px 0;
+    .menu-content_image {
+      img {
+        width: 100%;
+      }
+    }
+    h2 {
+      padding: 30px 0;
+      font-size: 1.8rem;
+      text-align: left;
+    }
+    p {
+      padding-bottom: 20px;
+    }
+    p:last-child {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  } //mews一覧ページ
+  .news {
+    >ul {
+      display: flex;
+      >li:first-child {
+        width: 180px;
+      }
+      >li:nth-child(2) {
+        width: 600px;
+      }
+      >li:nth-child(3) {
+        width: 100px;
+      }
+      >li:last-child {
+        width: 300px;
+      }
+      >li {
+        max-width: 100%;
+      }
+    }
+    .content-list_head {
+      margin-top: 50px;
+      li {
+        padding: 15px 0 15px 5px;
+        background-color: #eeeeee;
+        font-weight: bold;
+        color: #222222;
+      }
+    }
+    .content-list_inner {
+      padding-bottom: 50px;
+      li {
+        padding: 15px 0 15px 5px;
+        border-bottom: solid 1px #eeeeee;
+      }
+      li:last-child {
+        display: flex;
+        p {
+          padding-right: 20px;
+          .fa-edit {
+            color: #16ae37;
+          }
+          .fa-trash-alt {
+            color: #dd0000;
+          }
+        }
+      }
+    }
+  }
+  .news-content {
+    width: 900px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 70px 0;
+    >h2 {
+      padding-bottom: 10px;
+      text-align: justify;
+      text-justify: distribute;
+    }
+    .tag {
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #999999;
+      >p {
+        padding-right: 20px;
+      }
+    }
+    .news-content_image {
+      padding-top: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    >p {
+      padding-top: 30px;
+    }
+  }//商品一覧ページ
+  .item {
+    >ul {
       display: flex;
       flex-wrap: wrap;
       padding: 70px 0;
-      li {
+      >li {
         width: calc(90%/3);
         margin: 10px auto;
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
@@ -171,30 +269,6 @@ main {
           }
         }
       }
-    }
-  }
-  //商品詳細ページ
-  .menu-content {
-    width: 800px;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 100px 0;
-    .menu-content_image {
-      img {
-        width: 100%;
-      }
-    }
-    h2 {
-      padding: 30px 0;
-      font-size: 1.8rem;
-      text-align: left;
-    }
-    p {
-      padding-bottom: 20px;
-    }
-    p:last-child {
-      font-size: 1.2rem;
-      font-weight: bold;
     }
   }
 }
