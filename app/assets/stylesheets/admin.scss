@@ -144,7 +144,36 @@ main {
       font-size: 1.2rem;
       font-weight: bold;
     }
-  } //mews一覧ページ
+  }
+  .banner {
+    >ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      >li {
+        width: calc(90%/3);
+        margin: 10px auto;
+        .banner-image {
+          img {
+            width: 100%;
+          }
+        }
+        .edit-action {
+          display: flex;
+          padding-bottom: 20px;
+          p {
+            padding-right: 20px;
+            .fa-edit {
+              color: #16ae37;
+            }
+            .fa-trash-alt {
+              color: #dd0000;
+            }
+          }
+        }
+      }
+    }
+  }//news一覧ページ
   .news {
     >ul {
       display: flex;
@@ -192,7 +221,7 @@ main {
         }
       }
     }
-  }
+  }//news詳細ページ
   .news-content {
     width: 900px;
     max-width: 90%;
