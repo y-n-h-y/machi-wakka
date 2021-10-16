@@ -8,9 +8,33 @@
         <i class="fas fa-plus">&thinsp;新規作成</i>
         <% end %>
       </div>
+    <ul>
+        <% @items.each do |item| %>
+        <%= link_to admin_shop_item_path(item, @shop) do %>
+        <li>
+            <div class="image">
+                <% if item.image.nil? %>
+                <%= image_tag('no-image') %>
+                <% else %>
+                <%= attachment_image_tag item, :image %>
+                <% end %>
+            </div>
+            <h2 class="list-title"><%= item.name %></h2>
+            <div class="edit-action">
+              <p>
+                <%= link_to edit_admin_shop_item_path(item, @shop) do %>
+                <i class="far fa-edit">&thinsp;編集する</i>
+                <% end %>
+              </p>
+              <p>
+                <%= link_to admin_shop_item_path(item, @shop), method: :delete do %>
+                <i class="far fa-trash-alt">削除する</i>
+                <% end %>
+              </p>
+            </div>
+        </li>
+        <% end %>
+        <% end %>
+    </ul>
   </div>
-<% @items.each do |item| %>
-<p><%= link_to item.name, admin_shop_item_path(@item, @shop) %></p>
-<% end %>
-<p><%= link_to "編集する", edit_admin_shop_item_path(@item, @shop) %></p>
 </main>

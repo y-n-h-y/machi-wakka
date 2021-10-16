@@ -1,7 +1,7 @@
 class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
-    @shop = Shop.ids
+    @shop = current_admin.shop.id
   end
 
   def create
@@ -16,7 +16,6 @@ class Admin::ItemsController < ApplicationController
   def index
     @items = current_admin.shop.items
     @shop = Shop.ids
-    @item = Item.find(params[:shop_id])
   end
 
   def show
@@ -32,6 +31,9 @@ class Admin::ItemsController < ApplicationController
   end
 
   def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to admin_shop_items_path
   end
 
   private
