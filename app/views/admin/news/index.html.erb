@@ -9,24 +9,35 @@
   </div>
   <div class="content-list news">
       <div class="new-action">
-        <%= link_to new_shop_news_path do %>
+        <%= link_to new_admin_shop_news_path do %>
         <i class="fas fa-plus">&thinsp;新規作成</i>
         <% end %>
       </div>
-      <ul>
+      <ul class="content-list_head">
+        <li>作成日時</li>
         <li>タイトル</li>
+        <li>ジャンル</li>
         <li></li>
       </ul>
-      <ul>
-        <% @current_news.each do |news| %>
+      <% @current_news.each do |news| %>
+      <ul class="content-list_inner">
+        <li><%= news.created_at.strftime('%Y年%m月%d日') %></li>
         <li><%= link_to news.title, admin_shop_news_path(@shop, news) %></li>
-        <li></li>
-        <% end %>
+        <li><%= news.genre_i18n %></li>
+        <li>
+            <p>
+              <%= link_to edit_admin_shop_news_path(@shop, news) do %>
+              <i class="far fa-edit">&thinsp;編集する</i>
+              <% end %>
+            </p>
+            <p>
+              <%= link_to admin_shop_news_path(@shop, news), method: :delete do %>
+              <i class="far fa-trash-alt">&thinsp;削除する</i>
+              <% end %>
+            </p>
+        </li>
       </ul>
+      <% end %>
   </div>
 </main>
-<p><%= link_to "新規作成", new_admin_shop_news_path %></p>
-<% @current_news.each do |news| %>
-<p></p>
-<% end %>
 

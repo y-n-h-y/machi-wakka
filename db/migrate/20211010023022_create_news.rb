@@ -2,6 +2,7 @@ class CreateNews < ActiveRecord::Migration[5.2]
   def change
     create_table :news do |t|
       t.integer :shop_id
+      t.integer :genre
       t.string :title
       t.string :image_id
       t.text :content
