@@ -14,10 +14,13 @@ class Admin::NewsController < ApplicationController
   end
 
   def index
-    @news = News.all
+    @current_news = current_admin.shop.news
+    @shop = Shop.ids
+    @news = News.find(params[:shop_id])
   end
 
   def show
+    @news = News.find(params[:id])
   end
 
   def edit
