@@ -26,7 +26,7 @@ class Admin::TopBannersController < ApplicationController
   def update
     @top_banner = TopBanner.find(params[:id])
     if @top_banner.update(top_banner_params)
-      redirect_to admin_shop_top_banner_path(@news)
+      redirect_to admin_shop_top_banners_path
     else
       render :edit
     end
