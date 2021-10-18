@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     resources :shops do
+      collection do
+        get :search
+      end
       resources :reviews
       resources :items
       resources :news

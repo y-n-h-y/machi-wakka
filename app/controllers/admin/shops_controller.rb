@@ -5,7 +5,7 @@ class Admin::ShopsController < ApplicationController
   end
 
   def create
-    @shop = shop.new(shop_params)
+    @shop = Shop.new(shop_params)
     @shop.admin_id = current_admin.id
     if @shop.save
       redirect_to admin_shop_path(@shop)

@@ -16,3 +16,25 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+/*global $*/
+
+$(function() {
+  $(".top-img")
+    .find("li")
+    .hide();
+  $(".top-img")
+    .find("li:first")
+    .stop()
+    .fadeIn(1000);
+
+  setInterval(function() {
+    $(".top-img")
+      .find("li:first-child")
+      .fadeOut(1000)
+      .next("li")
+      .fadeIn(1000)
+      .end()
+      .appendTo(".top-img");
+  }, 5000);
+});
+
