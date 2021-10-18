@@ -10,6 +10,7 @@ class Shop < ApplicationRecord
 
   attachment :logo
 
+
   enum shop_genre: { gourmet: 0, shopping: 1, relaxation: 2, beauty_salon: 3, school: 4, private_school: 5,
                      dental: 6, hospital: 7, outdoor: 8, second_shop: 9, pet: 10,
                      life_support: 11, lear_estate: 12, ceremonial: 13
@@ -28,4 +29,9 @@ class Shop < ApplicationRecord
      福岡県: 40, 佐賀県: 41, 長崎県: 42, 熊本県: 43, 大分県: 44, 宮崎県: 45, 鹿児島県: 46,
      沖縄県: 47
   }
+
+  # def self.search(search)
+  #   return Shop.all unless search
+  #   Shop.where(['state LIKE ? AND shop_genre LIKE ?', "%#{search}%", "%#{search}%"])
+  # end
 end

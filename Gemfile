@@ -63,6 +63,8 @@ group :development do
   gem 'rubocop', require: false
 
   gem "jquery-rails"
+
+  gem 'ransack'
 end
 
 group :test do

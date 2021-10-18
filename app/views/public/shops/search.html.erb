@@ -1,2 +1,5 @@
 <h1>Public::Shops#search</h1>
 <p>Find me in app/views/public/shops/search.html.erb</p>
+<% @shops.each do |shop| %>
+<%= shop.name %>
+<% end %>
