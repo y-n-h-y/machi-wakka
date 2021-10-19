@@ -1,2 +1,69 @@
-<h1>Admin::Shops#edit</h1>
-<p>Find me in app/views/admin/shops/edit.html.erb</p>
+<main>
+  <div class="head">
+    <h1>店舗情報編集フォーム</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_admin_shops_path do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗トップページに戻る</i>
+    <% end %>
+  </div>
+  <%= form_with model: @shop, url: {controller: 'shops', action: 'update' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :name, "会社名または店舗名" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_group">
+      <%= f.label :shop_genre, "お店のジャンル" %>
+      <%= f.select :shop_genre, Shop.shop_genres_i18n.invert, {} %>
+    </div>
+    <div class="form_group">
+      <%= f.label :postal_code, "郵便番号(ハイフンなし）" %>
+      <%= f.text_field :postal_code %>
+    </div>
+    <div class="form_group">
+      <%= f.label :state, "住所（都道府県）" %>
+      <%= f.select :state, Shop.states.keys, {} %>
+    </div>
+    <div class="form_group">
+      <%= f.label :city, "住所（市区町村）" %>
+      <%= f.text_field :city %>
+    </div>
+    <div class="form_group">
+      <%= f.label :address, "住所（市区町村以降）" %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="form_group">
+      <%= f.label :phone, "電話番号（ハイフンなし）" %>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="form_group">
+      <%= f.label :access, "アクセス" %>
+      <%= f.text_field :access %>
+    </div>
+    <div class="form_group">
+      <%= f.label :parking, "駐車場の有無" %>
+      <%= f.text_field :parking %>
+    </div>
+    <div class="form_group">
+      <%= f.label :business_hours, "営業時間" %>
+      <%= f.text_field :business_hours %>
+    </div>
+    <div class="form_group">
+      <%= f.label :holiday, "定休日" %>
+      <%= f.text_field :holiday %>
+    </div>
+    <div class="form_group">
+      <%= f.label :homepage, "ホームページURL" %>
+      <%= f.text_field :homepage %>
+    </div>
+    <div class="form_group">
+      <%= f.label :logo, "ロゴマーク" %>
+      <%= f.attachment_field :logo, class: 'logo-form' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "保存する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

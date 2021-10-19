@@ -30,6 +30,10 @@ class Shop < ApplicationRecord
      沖縄県: 47
   }
 
+  def full_address
+    state + city + address
+  end
+
   # def self.search(search)
   #   return Shop.all unless search
   #   Shop.where(['state LIKE ? AND shop_genre LIKE ?', "%#{search}%", "%#{search}%"])

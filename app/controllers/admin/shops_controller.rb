@@ -15,7 +15,7 @@ class Admin::ShopsController < ApplicationController
   end
 
   def top
-    @shop = Shop.ids
+    @shop = current_admin.shop.id
   end
 
   def show

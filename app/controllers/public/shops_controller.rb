@@ -7,11 +7,13 @@ class Public::ShopsController < ApplicationController
   end
 
   def index
-    @search = Shop.search(search_params)
-    @shops = @search.result(distinct: true)
+    @shops = Shop.all
+    # @search = Shop.search(search_params)
+    # @shops = @search.result(distinct: true)
   end
 
   def show
+    @shop = Shop.find(params[:id])
   end
 
   def search
