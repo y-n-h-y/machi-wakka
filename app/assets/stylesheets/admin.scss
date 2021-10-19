@@ -95,6 +95,49 @@ main {
         }
       }
     }
+  }
+  .shop-detail {
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 0;
+    .shop-edit-action {
+      padding-bottom: 30px;
+      text-align: right;
+      .fa-edit {
+        color: #16ae37;
+      }
+    }
+    ul {
+      border-radius: 10px;
+      background-color: #f7f7f7;
+      li {
+        dl {
+          display: flex;
+          padding: 0 10px;
+          dt {
+            width: 220px;
+            padding: 20px 0 20px 15px;
+            border-bottom: solid 2px #777777;
+            font-weight: bold;
+            color: #555555;
+          }
+          dd {
+            width: 100%;
+            padding: 20px 0 20px 15px;
+            border-bottom: solid 2px #cccccc;
+            color: #555555;
+          }
+        }
+      }
+      li:last-child {
+        dl {
+          dt,
+          dd {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
   } //一覧ページヘッダーテンプレート
   .content-list {
     width: 90%;
@@ -144,7 +187,7 @@ main {
       font-size: 1.2rem;
       font-weight: bold;
     }
-  }//トップバナー一覧ページ
+  } //トップバナー一覧ページ
   .banner {
     >ul {
       display: flex;
@@ -197,7 +240,7 @@ main {
         }
       }
     }
-  }//news一覧ページ
+  } //news一覧ページ
   .news {
     >ul {
       display: flex;
@@ -245,7 +288,7 @@ main {
         }
       }
     }
-  }//news詳細ページ
+  } //news詳細ページ
   .news-content {
     width: 900px;
     max-width: 90%;
@@ -273,7 +316,7 @@ main {
     >p {
       padding-top: 30px;
     }
-  }//商品一覧ページ
+  } //商品一覧ページ
   .item {
     >ul {
       display: flex;

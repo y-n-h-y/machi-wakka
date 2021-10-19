@@ -4,11 +4,12 @@
         <li><%= image_tag('22607097_m.jpeg') %></li>
         <li><%= image_tag('5113904_m.jpeg') %></li>
       </ul>
-    <h1>きっとみつかる、行きたくなるお店。</h1>
+    <h1>きっとみつかる、行きたくなる町。</h1>
     </div>
 </main>
 
 <%= search_form_for @search, url: search_shops_path do |f| %>
 <%= f.select :state_eq, options_for_select(Shop.states_i18n) %>
+<%= f.select :shop_genre_eq, options_for_select(Shop.shop_genres_i18n.invert) %>
 <%= f.submit "検索" %>
 <% end %>
