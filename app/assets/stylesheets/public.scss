@@ -74,4 +74,23 @@ main {
       }
     }
   }
+  .head {
+    padding: 15px 0;
+    border-bottom: solid 1px #eeeeee;
+    text-align: center;
+    p {
+      color: #68b6e6;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    img {
+      width: 200px;
+      padding: 10px 0;
+    }
+  }
+  .slider {
+    margin: 0 auto
+    li {
+    }
+  }
 }

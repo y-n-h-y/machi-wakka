@@ -1,2 +1,14 @@
-<h1>Public::Shops#show</h1>
-<p>Find me in app/views/public/shops/show.html.erb</p>
+<main>
+  <div class="head">
+    <% if @shop.logo_id.blank? %>
+    <p><%= @shop.name %></p>
+    <% else %>
+    <%= attachment_image_tag @shop, :logo %>
+    <% end %>
+  </div>
+  <ul class="slider">
+    <% @top_banners.each do |banner| %>
+    <li><%= attachment_image_tag banner, :image %></li>
+    <% end %>
+  </ul>
+</main>

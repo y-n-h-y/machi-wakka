@@ -15,6 +15,10 @@ class Public::ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @top_banners = @shop.top_banners
+    @items = @shop.items
+    @news = @shop.news
+    @services = @shop.services
   end
 
   def search
