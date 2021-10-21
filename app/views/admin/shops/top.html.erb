@@ -47,7 +47,7 @@
     <% else %>
     <ul>
       <li>
-        <%= link_to admin_shop_path(@shop) do %>
+        <%= link_to admin_shop_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>店舗情報</h2>
@@ -57,7 +57,7 @@
       </li>
       <% if current_admin.shop.top_banners.empty? %>
       <li>
-        <%= link_to new_admin_shop_top_banner_path(@shop) do %>
+        <%= link_to new_admin_shop_top_banner_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>トップバナー</h2>
@@ -67,7 +67,7 @@
       </li>
       <% else %>
       <li>
-        <%= link_to admin_shop_top_banners_path(@shop) do %>
+        <%= link_to admin_shop_top_banners_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>トップバナー</h2>
@@ -78,7 +78,7 @@
       <% end %>
       <% if current_admin.shop.services.empty? %>
       <li>
-        <%= link_to new_admin_shop_service_path(@shop) do %>
+        <%= link_to new_admin_shop_service_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>サービス</h2>
@@ -88,7 +88,7 @@
       </li>
       <% else %>
       <li>
-        <%= link_to admin_shop_services_path(@shop) do %>
+        <%= link_to admin_shop_services_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>サービス</h2>
@@ -99,7 +99,7 @@
       <% end %>
       <% if current_admin.shop.items.empty? %>
       <li>
-        <%= link_to new_admin_shop_item_path(@shop) do %>
+        <%= link_to new_admin_shop_item_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>商品/メニュー</h2>
@@ -109,7 +109,7 @@
       </li>
       <% else %>
       <li>
-        <%= link_to admin_shop_items_path(@shop) do %>
+        <%= link_to admin_shop_items_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>商品/メニュー</h2>
@@ -120,7 +120,7 @@
       <% end %>
       <% if current_admin.shop.news.empty? %>
       <li>
-        <%= link_to new_admin_shop_news_path(@shop) do %>
+        <%= link_to new_admin_shop_news_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>ニュース</h2>
@@ -130,7 +130,7 @@
       </li>
       <% else %>
       <li>
-        <%= link_to admin_shop_news_index_path(@shop) do %>
+        <%= link_to admin_shop_news_index_path(current_admin.shop.id) do %>
         <div class="shop-create_content">
           <%= image_tag('shop-create') %>
           <h2>ニュース</h2>

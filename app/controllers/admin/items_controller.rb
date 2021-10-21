@@ -1,6 +1,7 @@
 class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
+    @shop = current_admin.shop.id
   end
 
   def create
