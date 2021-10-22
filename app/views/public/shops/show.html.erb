@@ -6,9 +6,49 @@
     <%= attachment_image_tag @shop, :logo %>
     <% end %>
   </div>
+  <div class="top">
   <ul class="slider">
     <% @top_banners.each do |banner| %>
     <li><%= attachment_image_tag banner, :image %></li>
     <% end %>
   </ul>
+  <div class="basic-info">
+    <dl>
+      <dt><i class="fas fa-subway">&thinsp;アクセス</i></dt>
+      <dd><%= @shop.access %></dd>
+    </dl>
+    <dl>
+      <dt><i class="fas fa-map-marker-alt">&thinsp;&thinsp;住所</i></dt>
+      <dd><%= @shop.full_address %></dd>
+    </dl>
+    <dl>
+      <dt><i class="fas fa-clock">&thinsp;営業時間</i></dt>
+      <dd><%= @shop.business_hours %></dd>
+    </dl>
+  </div>
+  <div class="shop-content">
+    <ul class="shop-content_tab">
+      <li><a href="#service">サービス</a></li>
+      <li><a href="#item">メニュー</a></li>
+      <li><a href="#news">ニュース</a></li>
+      <li><a href="#review">レビュー</a></li>
+      <li><a href="#info">店舗情報</a></li>
+    </ul>
+    <div id="service" class="area">
+      <p>サービス内容</p>
+    </div>
+    <div id="item" class="area">
+      <p>商品/メニュー内容</p>
+    </div>
+    <div id="news" class="area">
+      <p>ニュース内容</p>
+    </div>
+    <div id="review" class="area">
+      <p>レビュー内容</p>
+    </div>
+    <div id="info" class="area">
+      <p>店舗情報内容</p>
+    </div>
+  </div>
+  </div>
 </main>
