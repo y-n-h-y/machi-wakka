@@ -29,6 +29,49 @@ main {
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
+  }//検索フォーム
+  .search {
+    position: absolute;
+    width: 650px;
+    max-width: 90%;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+    .search-form {
+      display: flex;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+      .search-form_list {
+        padding: 0 10px;
+        select,
+        input[type=text] {
+          width: 160px;
+          height: 40px;
+          padding: 0 20px;
+          background-color: #f5f5f5;
+          border: solid 0px;
+        }
+      }
+      .search-form_action {
+        padding-left: 10px;
+        button {
+          width: 45px;
+          height: 45px;
+          border: 0px;
+          background-color: #68b6e6;
+          border-radius: 50%;
+          cursor: pointer;
+          .fa-search {
+            color: #ffffff;
+          }
+        }
+      }
+    }
   }
   //店舗一覧表示
   .shop-list {
@@ -55,8 +98,7 @@ main {
                 border-radius: 10px;
               }
             }
-            .shop-list_content
-            h2 {
+            .shop-list_content h2 {
               padding: 10px 0 20px 20px;
               text-align: left;
               color: #68b6e6;
@@ -74,6 +116,7 @@ main {
       }
     }
   }
+  //店舗詳細ページ
   .head {
     padding: 15px 0;
     border-bottom: solid 1px #eeeeee;
@@ -88,9 +131,73 @@ main {
       padding: 10px 0;
     }
   }
-  .slider {
-    margin: 0 auto
-    li {
+  .top {
+    background-color: #f5f5f5;
+    .slider {
+      margin: 0 auto;
+      li {}
+    }
+    .basic-info {
+      width: 90%;
+      margin: 0 auto;
+      padding: 50px 0 20px 0;
+      dl {
+        display: flex;
+        padding: 5px 0;
+        dt {
+          width: 100px;
+        }
+        dt,
+        dd {
+          font-size: 0.8rem;
+          color: #555555;
+        }
+      }
+    }
+    .shop-content {
+      background-color: #ffffff;
+      border-radius: 10px 10px 0 0;
+      .shop-content_tab {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        >li {
+          width: 300px;
+          min-width: 130px;
+          padding: 30px 0 ;
+          text-align: center;
+          a {
+            padding: 10px 25px;
+            font-size: 0.9rem;
+            color: #68b6e6;
+          }
+          &.active {
+            a {
+              background-color: #68b6e6;
+              border-radius: 3rem;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      .area {
+        display: none;
+        opacity: 0;
+        background-color: #cee4ea;
+        &.is-active {
+          display: block;
+          animation: displayAnime .2s forwards;
+        }
+      }
     }
   }
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

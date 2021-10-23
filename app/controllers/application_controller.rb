@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
-    @search = Shop.ransack(params[:q])
+    @q = Shop.ransack(params[:q])
   end
 
 
