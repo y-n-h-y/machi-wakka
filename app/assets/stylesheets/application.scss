@@ -60,6 +60,12 @@ header {
             }
           }
         }
+        .mypage-action {
+          >a {
+            padding: 12px 13px;
+            border-radius: 50%;
+          }
+        }
       }
     }
   }
