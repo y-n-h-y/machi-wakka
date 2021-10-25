@@ -29,6 +29,6 @@ class Public::ShopsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:state_eq, :shop_genre_eq, :city_cont)
+    params.require(:q).permit(:state_eq, :shop_genre_eq, :city_or_address_cont)
   end
 end

@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'favorites/create'
+    get 'favorites/destroy'
+  end
+  namespace :customer do
+    get 'favorites/create'
+    get 'favorites/destroy'
+  end
+  namespace :admin do
+    get 'favorites/index'
+  end
     devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
@@ -22,8 +33,14 @@ Rails.application.routes.draw do
       resources :items
       resources :news
       resources :services
+      resource :favorites, only: [:create, :destroy]
     end
-    resources :customers
+    resources :customers do
+      collection do
+        get :like
+      end
+      resources :reviews, only: [:index]
+    end
   end
 
   namespace :admin do
@@ -37,6 +54,7 @@ Rails.application.routes.draw do
       resources :services
       resources :top_banners
       resources :reviews
+      resource :favorites
     end
     resources :admins
   end
