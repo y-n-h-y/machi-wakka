@@ -1,55 +1,57 @@
 <main>
   <div class="head">
-    <h1 class="head_mypage">会員マイページ</h1>
+    <h1 class="head_mypage">プロフィール</h1>
   </div>
-  <div class="mypage-content">
-    <div class="mypage-icon">
-      <div class="mypage-icon_image"><i class="fas fa-user"></i></div>
-      <p><%= current_customer.nickname %></p>
-    </div>
+  <div class="layer">
+    <%= link_to top_customers_path do %>
+    <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
+    <% end %>
+  </div>
+  <div class="profile">
     <ul>
-      <% if Favorite.exists?(@customer) %>
       <li>
-        <%= link_to like_customers_path do %>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>お気に入り店舗一覧</h2>
-        </div>
-        <% end %>
+        <dl>
+          <dt>ニックネーム</dt>
+          <dd><%= @customer.nickname %></dd>
+        </dl>
       </li>
-      <% else %>
       <li>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>お気に入り店舗一覧</h2>
-        </div>
+        <dl>
+          <dt>メールアドレス</dt>
+          <dd><%= @customer.email %></dd>
+        </dl>
       </li>
-      <% end %>
-      <% if current_customer.reviews.blank? %>
       <li>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>レビュー一覧</h2>
-        </div>
+        <dl>
+          <dt>住所（都道府県）</dt>
+          <dd>
+            <% if @customer.state.blank? %>
+            未設定
+            <% elsif @customer.state == 0 %>
+            未設定
+            <% else %>
+            <%= @customer.state %>
+            <% end %>
+          </dd>
+        </dl>
       </li>
-      <% else %>
       <li>
-        <%= link_to customer_reviews(current_customer) do %>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>レビュー一覧</h2>
-        </div>
-        <% end %>
-      </li>
-      <% end %>
-      <li>
-        <%= link_to edit_customer_path(current_customer) do %>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>登録情報編集</h2>
-        </div>
-        <% end %>
+        <dl>
+          <dt>住所（市区町村）</dt>
+          <dd>
+            <% if @customer.city.blank? %>
+            未設定
+            <% else %>
+            <%= @customer.city %>
+            <% end %>
+          </dd>
+        </dl>
       </li>
     </ul>
+    <div class="edit-action">
+      <%= link_to edit_customer_path do %>
+      <i class="far fa-edit">&thinsp;編集する</i>
+      <% end %>
+    </div>
   </div>
 </main>

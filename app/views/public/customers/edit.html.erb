@@ -1,2 +1,34 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<main>
+  <div class="head">
+    <h1>登録情報編集フォーム</h1>
+  </div>
+  <div class="layer">
+    <%= link_to customer_path do %>
+    <i class="fas fa-chevron-left">&thinsp;プロフィールに戻る</i>
+    <% end %>
+  </div>
+  <%= form_with model: @customer, url: {controller: 'customers', action: 'update' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :nickname, "ニックネーム" %>
+      <%= f.text_field :nickname %>
+    </div>
+    <div class="form_group">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email %>
+    </div>
+    <div class="form_group">
+      <%= f.label :state, "住所（都道府県）" %>
+      <%= f.select :state, Customer.states.keys, {} %>
+    </div>
+    <div class="form_group">
+      <%= f.label :city, "住所（市区町村）" %>
+      <%= f.text_field :city %>
+    </div>
+    <div class="actions">
+      <%= f.submit "保存する" %>
+    </div>
+  </div>
+  <% end %>
+</main>
+
