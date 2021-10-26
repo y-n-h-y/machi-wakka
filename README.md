@@ -25,7 +25,7 @@
 - 引っ越しをして初めて住む町を散策するとき
 
 ## 設計書
-作成が出来次第更新
+https://docs.google.com/spreadsheets/d/1R1BkRV046lmE61sBIPO4LFput4NNKm-lvwqtbsUR_jE/edit?usp=sharing
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/16dDWl8TZNTteFWnU8qBDgzt-J27NoMdNTtdv0om1tmc/edit?usp=sharing>
