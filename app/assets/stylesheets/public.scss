@@ -29,7 +29,7 @@ main {
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-  }//検索フォーム
+  } //検索フォーム
   .search {
     position: absolute;
     width: 650px;
@@ -72,8 +72,7 @@ main {
         }
       }
     }
-  }
-  //店舗一覧表示
+  } //店舗一覧表示
   .shop-list {
     background-color: #f8f8f8;
     ul {
@@ -115,8 +114,7 @@ main {
         }
       }
     }
-  }
-  //店舗詳細ページ
+  } //店舗詳細ページ
   .head {
     padding: 15px 0;
     border-bottom: solid 1px #eeeeee;
@@ -164,7 +162,7 @@ main {
         >li {
           width: 300px;
           min-width: 130px;
-          padding: 30px 0 ;
+          padding: 30px 0;
           text-align: center;
           a {
             padding: 10px 25px;
@@ -197,13 +195,94 @@ main {
       font-size: 1.5rem;
     }
   }
+  //マイページトップ
+  .mypage-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 100px 0;
+    .mypage-icon {
+      padding-bottom: 50px;
+      text-align: center;
+      .mypage-icon_image {
+        width: 60px;
+        margin: 0 auto;
+        padding: 15px 0;
+        border: solid 2px #16ae37;
+        border-radius: 50%;
+        .fa-user {
+          font-size: 1.5rem;
+          color: #16ae37;
+        }
+      }
+      p {
+        padding-top: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: calc(90%/3);
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        .mypage-content_list {
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+          img {
+            width: 80%;
+          }
+          h2 {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 0 30px 0;
+          }
+        }
+      }
+    }
+  }
+  .profile {
+    width: 90%;
+    margin: 0 auto;
+    padding: 70px 0 90px 0;
+    ul {
+      li {
+        padding: 10px 0;
+        dl {
+          display: flex;
+          dt {
+            width: 170px;
+          }
+        }
+      }
+    }
+    .edit-action {
+      padding-top: 30px;
+      a {
+        padding: 12px 25px;
+        background-color: #68b6e6;
+        border-radius: 3rem;
+        border: solid 1px #68b6e6;
+        font-size: 0.8rem;
+        color: #ffffff;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover {
+          background-color: #ffffff;
+          color: #68b6e6;
+        }
+      }
+    }
+  }
 }
 
-@keyframes displayAnime{
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+@keyframes displayAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

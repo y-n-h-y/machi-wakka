@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     resources :customers do
       collection do
         get :like
+        get :top
       end
       resources :reviews, only: [:index]
     end
