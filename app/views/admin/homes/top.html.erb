@@ -13,23 +13,31 @@
         </div>
         <% end %>
       </li>
-      <% if @shop == NilClass %>
+      <% if @shop.blank? %>
       <li>
-        <%= link_to admin_shop_reviews_path do %>
+        <div class="menu_content">
+          <%= image_tag('shop-create') %>
+          <h2>レビュー</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+      </li>
+      <% elsif @shop.reviews.blank? %>
+      <li>
+        <div class="menu_content">
+          <%= image_tag('shop-create') %>
+          <h2>レビュー</h2>
+          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
+        </div>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to admin_shop_reviews_path(@shop.id) do %>
         <div class="menu_content">
           <%= image_tag('shop-create') %>
           <h2>レビュー</h2>
           <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
         </div>
         <% end %>
-      </li>
-      <% else %>
-      <li>
-        <div class="menu_content">
-          <%= image_tag('shop-create') %>
-          <h2>レビュー</h2>
-          <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段</p>
-        </div>
       </li>
       <% end %>
       <li>

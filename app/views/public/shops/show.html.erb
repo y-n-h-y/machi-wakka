@@ -88,10 +88,11 @@
           <% if @shop.reviews.blank? %>
           <p>現在レビューはございせん</p>
           <% else %>
-          <% @reviews.each do |review| %>
-          <%= review.title %>
-          <%= review.content %>
-          <% end %>
+            <% @reviews.each do |review| %>
+            <%= review.customer.nickname %>
+            <%= review.title %>
+            <%= review.content %>
+            <% end %>
           <% end %>
           <% if customer_signed_in? %>
           <%= form_with model:[@shop, @review], local:true do |f| %>
