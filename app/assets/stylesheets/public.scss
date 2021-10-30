@@ -158,33 +158,120 @@ main {
       .shop-content_tab {
         display: flex;
         flex-wrap: nowrap;
+        padding: 20px 0;
         overflow-x: scroll;
         >li {
-          width: 300px;
+          width: 200px;
           min-width: 130px;
-          padding: 30px 0;
+          margin: 0 30px;
+          padding: 10px 0;
+          border-radius: 3rem;
           text-align: center;
-          a {
-            padding: 10px 25px;
-            font-size: 0.9rem;
-            color: #68b6e6;
-          }
+          font-size: 0.9rem;
+          cursor: pointer;
           &.active {
-            a {
-              background-color: #68b6e6;
-              border-radius: 3rem;
-              color: #ffffff;
-            }
+            background-color: #68b6e6;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
           }
         }
       }
       .area {
         display: none;
-        opacity: 0;
-        background-color: #cee4ea;
-        &.is-active {
+         background-color: #f5f5f5;
+        &.show {
           display: block;
-          animation: displayAnime .2s forwards;
+        }
+        .area-content {
+          width: 90%;
+          margin: 0 auto;
+          p {
+            padding-bottom: 50px;
+          }
+        }
+        .item {
+          >ul {
+            display: flex;
+            justify-content: space-between;
+            >li {
+              width: calc(90%/2);
+              box-shadow: 0 0 0 0;
+              >a {
+                .item_inner {
+                  display: flex;
+                  align-items: center;
+                  padding: 10px 0;
+                  background-color: #ffffff;
+                  border-radius: 10px;
+                  .item_inner-image {
+                    width: 200px;
+                    height: 130px;
+                    margin-left: 10px;
+                    overflow: hidden;
+                    img {
+                      width: 100%;
+                      border-radius: 10px;
+                    }
+                  }
+                  .item_inner-caption {
+                    padding-left: 20px;
+                    p:first-child {
+                      padding: 10px 0 20px 0;
+                      font-size: 1.2rem;
+                      color: #68b6e6;
+                    }
+                    p:last-child {
+                      color: #888888;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .news {
+          >ul {
+            padding: 50px 0;
+            >li {
+              width: 100%;
+              background-color: #ffffff;
+              >a {
+                .news_inner {
+                  width: 95%;
+                  margin: 0 auto;
+                  border-bottom: solid 1px #eeeeee;
+                  .create-genre {
+                    display: flex;
+                    >p {
+                      padding: 20px 20px 10px 0;
+                      color: #888888;
+                    }
+                  }
+                  >p {
+                    padding-bottom: 30px;
+                    font-size: 1.5rem;
+                    color: #68b6e6;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .info {
+          padding: 50px 0;
+          dl {
+            display: flex;
+            padding: 20px 0;
+            background-color: #ffffff;
+            border-bottom: solid 1px #eeeeee;
+            dt {
+              width: 100px;
+              margin: 0 20px;
+            }
+          }
+          dl:last-child {
+            border-bottom: 0px;
+          }
         }
       }
     }
@@ -194,8 +281,7 @@ main {
       padding: 10px 0;
       font-size: 1.5rem;
     }
-  }
-  //マイページトップ
+  } //マイページトップ
   .mypage-content {
     width: 90%;
     margin: 0 auto;
@@ -275,14 +361,5 @@ main {
         }
       }
     }
-  }
-}
-
-@keyframes displayAnime {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
