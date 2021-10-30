@@ -15,6 +15,8 @@ class Public::ShopsController < ApplicationController
     @items = @shop.items
     @news = @shop.news
     @services = @shop.services
+    @reviews = @shop.reviews
+    @review = Review.new
   end
 
   def search

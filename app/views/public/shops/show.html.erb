@@ -85,7 +85,23 @@
       </div>
       <div class="area">
         <div class="area-content review">
-          <p>レビュー内容</p>
+          <% if @shop.reviews.blank? %>
+          <p>現在レビューはございせん</p>
+          <% else %>
+          <% @reviews.each do |review| %>
+          <%= review.title %>
+          <%= review.content %>
+          <% end %>
+          <% end %>
+          <% if customer_signed_in? %>
+          <%= form_with model:[@shop, @review], local:true do |f| %>
+          <%= f.text_field :title %>
+          <%= f.text_area :content %>
+          <%= f.submit "投稿する" %>
+          <% end %>
+          <% else %>
+          <p>会員登録後レビュー投稿が可能となります</p>
+          <% end %>
         </div>
       </div>
       <div class="area">
