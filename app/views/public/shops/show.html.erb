@@ -31,7 +31,7 @@
       <li class="tab active">サービス</li>
       <li class="tab">メニュー</li>
       <li class="tab">ニュース</li>
-      <li class="tab">レビュー</li>
+      <li class="tab">レビュー（<%= @reviews.count %>）</li>
       <li class="tab">店舗情報</li>
     </ul>
     <div class="tab-area">
@@ -98,6 +98,21 @@
                 </div>
                 <p class="review_title"><%= review.title %></p>
                 <p class="review_content"><%= review.content %></p>
+                <% if @current_review %>
+                <div class="edit-action">
+                  <p>
+                    <%= link_to edit_shop_review_path(review) do %>
+                    <i class="far fa-edit">&thinsp;編集する</i>
+                    <% end %>
+                  </p>
+                  <p>
+                    <%= link_to shop_review_path(review), method: :delete do %>
+                    <i class="far fa-trash-alt">&thinsp;削除する</i>
+                    <% end %>
+                  </p>
+                </div>
+                <% else %>
+                <% end %>
               </div>
             </li>
             <% end %>
