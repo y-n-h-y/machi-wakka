@@ -109,6 +109,9 @@ main {
               dd {
                 color: #555555;
               }
+              dd {
+                padding-right: 10px;
+              }
             }
           }
         }
@@ -178,7 +181,7 @@ main {
       }
       .area {
         display: none;
-         background-color: #f5f5f5;
+        background-color: #f5f5f5;
         &.show {
           display: block;
         }
@@ -249,7 +252,7 @@ main {
                   }
                   >p {
                     padding-bottom: 30px;
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                     color: #68b6e6;
                   }
                 }
@@ -286,6 +289,20 @@ main {
                 }
                 .review_content {
                   color: #888888;
+                }
+                .edit-action {
+                  display: flex;
+                  width: 90%;
+                  margin: 0 auto;
+                  >p {
+                    padding: 0 10px 20px 0;
+                    .fa-edit {
+                      color: #13ae67;
+                    }
+                    .fa-trash-alt {
+                      color: #dd0000;
+                    }
+                  }
                 }
               }
             }
@@ -454,6 +471,61 @@ main {
         &:hover {
           background-color: #ffffff;
           color: #68b6e6;
+        }
+      }
+    }
+  }
+  .review-list {
+    >ul {
+      width: 90%;
+      margin: 0 auto;
+      >li {
+        margin: 30px 0;
+        padding: 30px 0;
+        background-color: #eeeeee;
+        .review_list {
+          width: 90%;
+          margin: 0 auto;
+          background-color: #ffffff;
+          border-radius: 10px;
+          .name-create {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 0 auto;
+            border-bottom: solid 1px #c0c0c0;
+            >p {
+              padding: 30px 0 5px 0;
+            }
+          }
+          >p {
+            width: 90%;
+            margin: 0 auto;
+          }
+          .review_title {
+            padding: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #888888;
+          }
+          .review_content {
+            padding-bottom: 30px;
+            color: #888888;
+          }
+          .edit-action {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+            >p {
+              padding: 0 10px 20px 0;
+              .fa-edit {
+                color: #13ae67;
+              }
+              .fa-trash-alt {
+                color: #dd0000;
+              }
+            }
+          }
         }
       }
     }

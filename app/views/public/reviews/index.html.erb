@@ -1,6 +1,40 @@
-<h1>Public::Reviews#index</h1>
-<p>Find me in app/views/public/reviews/index.html.erb</p>
-<% @reviews.each do |review| %>
-<%= review.title %>
-<%= review.content %>
-<% end %>
+<main>
+  <div class="head">
+    <h1 class="head_mypage">レビュー履歴一覧</h1>
+  </div>
+  <div class="review-list">
+    <% if @reviews.blank? %>
+    <p>現在レビュー投稿はありません</p>
+    <% else %>
+    <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="review-shop">
+          <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
+        </div>
+        <div class="review_list">
+          <div class="name-create">
+            <p><%= review.customer.nickname %>さん</p>
+            <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
+          </div>
+          <p class="review_title"><%= review.title %></p>
+          <p class="review_content"><%= review.content %></p>
+          <div class="edit-action">
+            <p>
+              <%= link_to edit_shop_review_path(@shop, review) do %>
+                <i class="far fa-edit">&thinsp;編集する</i>
+              <% end %>
+            </p>
+            <p>
+              <%= link_to shop_review_path(@shop, review), method: :delete do %>
+                <i class="far fa-trash-alt">&thinsp;削除する</i>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</main>

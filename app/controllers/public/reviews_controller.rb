@@ -12,12 +12,21 @@ class Public::ReviewsController < ApplicationController
 
   def index
     @reviews = current_customer.reviews
+    @shop = @reviews.where(shop_id: (params[:shop_id]))
   end
 
   def edit
+    @review = current_customer.reviews
   end
 
   def update
+    @review = current_customer.reviews
+    @shop = Review.where(shop_id: (params[:shop_id]))
+    if @review.update(review_params)
+      redirect_to shop_path(@shop)
+    else
+      render :edit
+    end
   end
 
   def destroy
