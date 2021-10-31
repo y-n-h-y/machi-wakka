@@ -216,7 +216,7 @@ main {
         }
       }
     }
-  }
+  } //サービス一覧ページ
   .service {
     >ul {
       padding: 50px 0;
@@ -365,6 +365,35 @@ main {
           }
         }
       }
+    }
+  } //レビュー一覧ページ
+  .reviews-list {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    ul {
+      display: flex;
+      li {
+        max-width: 100%;
+        padding-left: 10px;
+      }
+      li:first-child {
+        width: 120px;
+      }
+      li:nth-child(2) {
+        width: 150px;
+      }
+      li:last-child {
+        width: 900px;
+      }
+    }
+    .reviews-head {
+      padding: 20px 0;
+      background-color: #eeeeee;
+    }
+    .reviews-content {
+      padding: 10px 0;
+      border-bottom: solid 1px #eeeeee;
     }
   }
 }

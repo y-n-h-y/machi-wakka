@@ -1,6 +1,24 @@
-<h1>Admin::Reviews#index</h1>
-<p>Find me in app/views/admin/reviews/index.html.erb</p>
-<% @reviews.each do |review| %>
-<%= review.customer.nickname %>
-<%= review.title %>
-<% end %>
+<main>
+  <div class="head">
+    <h1>レビュー&thinsp;一覧</h1>
+  </div>
+  <div class="layer">
+    <%= link_to admin_path do %>
+    <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
+    <% end %>
+  </div>
+  <div class="reviews-list">
+  <ul class="reviews-head">
+    <li>投稿日</li>
+    <li>ユーザー</li>
+    <li>タイトル</li>
+  </ul>
+  <% @reviews.each do |review| %>
+  <ul class="reviews-content">
+    <li><%= review.created_at.strftime('%Y.%m.%d')  %></li>
+    <li><%= review.customer.nickname %></li>
+    <li><%= link_to review.title, admin_shop_review_path(@shop, review) %></li>
+  </ul>
+  <% end %>
+  </div>
+</main>
