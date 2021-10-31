@@ -29,6 +29,10 @@ class Public::ReviewsController < ApplicationController
   end
 
   def destroy
+    review = Review.find(params[:id])
+    @shop = review.shop.id
+    review.destroy
+    redirect_to shop_path(@shop)
   end
 
   private
