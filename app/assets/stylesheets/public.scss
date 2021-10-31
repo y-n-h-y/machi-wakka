@@ -257,6 +257,102 @@ main {
             }
           }
         }
+        .review {
+          >ul {
+            >li {
+              padding: 30px 0;
+              .review_list {
+                background-color: #ffffff;
+                border-radius: 10px;
+                .name-create {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 90%;
+                  margin: 0 auto;
+                  border-bottom: solid 1px #c0c0c0;
+                  >p {
+                    padding: 30px 0 5px 0;
+                  }
+                }
+                >p {
+                  width: 90%;
+                  margin: 0 auto;
+                }
+                .review_title {
+                  padding: 20px 0;
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  color: #888888;
+                }
+                .review_content {
+                  color: #888888;
+                }
+              }
+            }
+          }
+          .new-review {
+            width: 500px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 30px 0 50px 0;
+            .new-review_inner {
+              background-color: #ffffff;
+              border-radius: 10px;
+              >p {
+                width: 90%;
+                margin: 0 auto;
+                padding: 20px 0;
+                font-size: 1.1rem;
+              }
+              .new-review_form {
+                width: 90%;
+                margin: 0 auto;
+                padding: 10px 0;
+                label {
+                  display: block;
+                  font-size: 0.9rem;
+                }
+                input[type=text],
+                textarea {
+                  width: 100%;
+                  margin-top: 5px;
+                  border: solid 0px;
+                  border-radius: 3px;
+                  background-color: #f5f5f5;
+                  &:focus {
+                    outline: none;
+                    border: solid 1px #13ae67;
+                  }
+                }
+                input[type=text] {
+                  height: 40px;
+                }
+                textarea {
+                  height: 150px;
+                }
+              }
+              .new-review_action {
+                padding: 20px 0 30px 0;
+                text-align: center;
+                input[type=submit] {
+                  width: 150px;
+                  height: 40px;
+                  border-radius: 3rem;
+                  border: solid 1px #13ae67;
+                  background-color: #13ae67;
+                  color: #ffffff;
+                  cursor: pointer;
+                  -webkit-transition: all .2s ease-in-out;
+                  transition: all .2s ease-in-out;
+                  &:hover {
+                    background: #ffffff;
+                    color: #13ae67;
+                  }
+                }
+              }
+            }
+          }
+        }
         .info {
           padding: 50px 0;
           dl {

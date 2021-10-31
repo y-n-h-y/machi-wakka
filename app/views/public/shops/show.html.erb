@@ -88,18 +88,40 @@
           <% if @shop.reviews.blank? %>
           <p>現在レビューはございせん</p>
           <% else %>
+          <ul>
             <% @reviews.each do |review| %>
-            <%= review.customer.nickname %>
-            <%= review.title %>
-            <%= review.content %>
+            <li>
+              <div class="review_list">
+                <div class="name-create">
+                  <p><%= review.customer.nickname %>さん</p>
+                  <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
+                </div>
+                <p class="review_title"><%= review.title %></p>
+                <p class="review_content"><%= review.content %></p>
+              </div>
+            </li>
             <% end %>
+          </ul>
           <% end %>
           <% if customer_signed_in? %>
-          <%= form_with model:[@shop, @review], local:true do |f| %>
-          <%= f.text_field :title %>
-          <%= f.text_area :content %>
-          <%= f.submit "投稿する" %>
-          <% end %>
+          <div class="new-review">
+            <div class="new-review_inner">
+            <p>レビューを投稿する</p>
+            <%= form_with model:[@shop, @review], local:true do |f| %>
+            <div class="new-review_form">
+              <%= f.label :title, "タイトル" %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="new-review_form">
+              <%= f.label :content, "内容" %>
+              <%= f.text_area :content %>
+            </div>
+            <div class="new-review_action">
+              <%= f.submit "投稿する" %>
+            </div>
+            <% end %>
+            </div>
+          </div>
           <% else %>
           <p>会員登録後レビュー投稿が可能となります</p>
           <% end %>
