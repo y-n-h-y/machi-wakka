@@ -396,4 +396,29 @@ main {
       border-bottom: solid 1px #eeeeee;
     }
   }
+  .review-detail {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    .review-detail_box {
+      width: 90%;
+      margin: 0 auto;
+      .review-detail_box_head {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #888888;
+      }
+      .review-detail_box_content {
+        padding-top: 30px;
+        >p:first-child {
+          padding-bottom: 15px;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        p {
+          color: #292929;
+        }
+      }
+    }
+  }
 }

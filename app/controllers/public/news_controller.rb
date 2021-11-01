@@ -3,5 +3,7 @@ class Public::NewsController < ApplicationController
   end
 
   def show
+    @news = News.find(params[:id])
+    @shop = @news.shop.id
   end
 end

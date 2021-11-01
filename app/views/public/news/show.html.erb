@@ -1,2 +1,24 @@
-<h1>Public::News#show</h1>
-<p>Find me in app/views/public/news/show.html.erb</p>
+<main>
+  <div class="head">
+    <h1><%= @news.genre_i18n %>詳細</h1>
+  </div>
+  <div class="layer">
+    <%= link_to shop_path(@shop) do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗詳細ページに戻る</i>
+    <% end %>
+  </div>
+  <div class="news-content">
+    <h2><%= @news.title %></h2>
+    <div class="tag">
+      <p><%= @news.created_at.strftime('%Y年%m月%d日') %></p>
+      <p><%= @news.genre_i18n %></p>
+    </div>
+    <div class="news-content_image">
+      <% if @news.image.nil? %>
+      <% else %>
+      <%= attachment_image_tag @news, :image %>
+      <% end %>
+    </div>
+    <p><%= @news.content %></p>
+  </div>
+</main>
