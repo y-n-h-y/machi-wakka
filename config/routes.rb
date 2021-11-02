@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :public do
-    get 'favorites/create'
-    get 'favorites/destroy'
-  end
-  namespace :customer do
-    get 'favorites/create'
-    get 'favorites/destroy'
-  end
-  namespace :admin do
-    get 'favorites/index'
-  end
+
     devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
