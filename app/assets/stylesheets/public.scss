@@ -119,6 +119,7 @@ main {
     }
   } //店舗詳細ページ
   .head {
+    position: relative;
     padding: 15px 0;
     border-bottom: solid 1px #eeeeee;
     text-align: center;
@@ -131,12 +132,31 @@ main {
       width: 200px;
       padding: 10px 0;
     }
+    .favorite {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      .favorite-mark {
+        .favorite-text {
+          font-size: 0.8rem;
+          font-weight: normal;
+          color: #888888;
+          .fa-star {
+            font-size: 1.1rem;
+            color: #888888;
+          }
+          .fas {
+            color: #FFD700;
+          }
+        }
+      }
+    }
   }
   .top {
     background-color: #f5f5f5;
     .slider {
       margin: 0 auto;
-      li {}
     }
     .basic-info {
       width: 90%;
@@ -191,7 +211,7 @@ main {
           p {
             padding-bottom: 50px;
           }
-        }
+        } //店舗詳細商品メニュー
         .item {
           >ul {
             display: flex;
@@ -231,7 +251,7 @@ main {
               }
             }
           }
-        }
+        } //店舗詳細ニュース
         .news {
           >ul {
             padding: 50px 0;
@@ -259,8 +279,12 @@ main {
               }
             }
           }
-        }
+        } //店舗詳細レビュー
         .review {
+          .no-review {
+            padding: 50px 0;
+            text-align: center;
+          }
           >ul {
             >li {
               padding: 30px 0;
@@ -475,8 +499,7 @@ main {
       }
     }
   }
-  レビュー履歴一覧
-  .review-list {
+  レビュー履歴一覧 .review-list {
     >ul {
       width: 90%;
       margin: 0 auto;

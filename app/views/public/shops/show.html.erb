@@ -5,21 +5,24 @@
     <% else %>
     <%= attachment_image_tag @shop, :logo %>
     <% end %>
+    <% if customer_signed_in? %>
     <div class="favorite">
       <% if @shop.favorited_by?(current_customer) %>
-    <%= link_to shop_favorites_path(@shop, @favorite), method: :delete do %>
+      <%= link_to shop_favorites_path(@shop, @favorite), method: :delete do %>
       <div class="favorite-mark">
-        <i class="fas fa-star"></i>
+        <p class="favorite-text">お気に入り削除&emsp;<i class="fas fa-star"></i></p>
       </div>
     <% end %>
     <% else %>
     <%= link_to shop_favorites_path(@shop), method: :post do %>
       <div class="favorite-mark">
-        <i class="far fa-star"></i>
+        <p class="favorite-text">お気に入り追加&emsp;<i class="far fa-star"></i></p>
       </div>
     <% end %>
     <% end %>
     </div>
+    <% else %>
+    <% end %>
   </div>
   <div class="top">
   <ul class="slider">
@@ -101,7 +104,7 @@
       <div class="area">
         <div class="area-content review">
           <% if @shop.reviews.blank? %>
-          <p>現在レビューはございせん</p>
+          <p class="no-review">現在レビューはございせん</p>
           <% else %>
           <ul>
             <% @reviews.each do |review| %>
@@ -153,7 +156,7 @@
             </div>
           </div>
           <% else %>
-          <p>会員登録後レビュー投稿が可能となります</p>
+          <p class="no-review">会員登録後レビュー投稿が可能となります</p>
           <% end %>
         </div>
       </div>
