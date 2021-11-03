@@ -5,6 +5,7 @@ class Shop < ApplicationRecord
   has_many :services, dependent: :destroy
   has_many :news, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   belongs_to :admin
 
@@ -34,8 +35,8 @@ class Shop < ApplicationRecord
     state + city + address
   end
 
-  # def self.search(search)
-  #   return Shop.all unless search
-  #   Shop.where(['state LIKE ? AND shop_genre LIKE ?', "%#{search}%", "%#{search}%"])
-  # end
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
+
 end

@@ -1,7 +1,8 @@
 class Public::FavoritesController < ApplicationController
   def create
-    @shop = Shop.find(params[:id])
-    @favorite = current_customer.favorites.new(shop_id: shop.id)
+    @shop = Shop.find(params[:shop_id])
+    @favorite = current_customer.favorites.new(shop_id: @shop.id)
+    @favorite.customer_id = current_customer.id
     @favorite.save
     redirect_to shop_path(@shop)
   end
@@ -11,7 +12,7 @@ class Public::FavoritesController < ApplicationController
 
   def destroy
     @shop = Shop.find(params[:shop_id])
-    @favorite = current_customer.favorites.find_by(shop_id: shop.id)
+    @favorite = current_customer.favorites.find_by(shop_id: @shop.id)
     @favorite.destroy
     redirect_to shop_path(@shop)
   end
