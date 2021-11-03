@@ -96,8 +96,6 @@ ActiveRecord::Schema.define(version: 2021_10_21_154104) do
     t.string "name"
     t.integer "shop_genre"
     t.string "postal_code"
-    t.integer "state"
-    t.string "city"
     t.string "address"
     t.string "phone"
     t.string "access"
