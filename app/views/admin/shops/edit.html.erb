@@ -22,15 +22,7 @@
       <%= f.text_field :postal_code %>
     </div>
     <div class="form_group">
-      <%= f.label :state, "住所（都道府県）" %>
-      <%= f.select :state, Shop.states.keys, {} %>
-    </div>
-    <div class="form_group">
-      <%= f.label :city, "住所（市区町村）" %>
-      <%= f.text_field :city %>
-    </div>
-    <div class="form_group">
-      <%= f.label :address, "住所（市区町村以降）" %>
+      <%= f.label :address, "住所" %>
       <%= f.text_field :address %>
     </div>
     <div class="form_group">

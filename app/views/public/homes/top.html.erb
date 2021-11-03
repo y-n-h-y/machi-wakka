@@ -9,10 +9,7 @@
       <%= search_form_for @q, url: search_shops_path do |f| %>
       <div class="search-form">
         <div class="search-form_list">
-          <%= f.select :state_eq, Shop.states.map{|k, v| [Shop.states_i18n[k], v]} %>
-        </div>
-        <div class="search-form_list">
-          <%= f.text_field :city_or_address_cont, placeholder: "地域" %>
+          <%= f.text_field :address_cont, placeholder: "エリア" %>
         </div>
         <div class="search-form_list">
           <%= f.select :shop_genre_eq, Shop.shop_genres.map{|k, v| [Shop.shop_genres_i18n[k], v]} %>
