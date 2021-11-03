@@ -1,11 +1,12 @@
 class Public::CustomersController < ApplicationController
   def like
-    @like = current_customer.favorites
-    @current_like = @like.where(shop_id: [:shop_id])
+    @likes = current_customer.favorites
+    @current_like = @likes.where(shop_id: [:shop_id])
   end
 
   def top
     @customer = current_customer.id
+    @favorite = current_customer.favorites
   end
 
   def show

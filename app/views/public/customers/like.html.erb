@@ -1,0 +1,57 @@
+<main>
+  <div class="head">
+    <h1 class="head_mypage">お気に入りリスト</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_customers_path do %>
+    <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
+    <% end %>
+  </div>
+  <ul>
+    <% @likes.each do |like| %>
+    <li>
+      <%= link_to shop_path(@current_like) do %>
+        <div class="shop-list_detail">
+          <div class="shop-list_image">
+            <% if like.top_banners.blank? %>
+            <%= image_tag('no-image.png') %>
+            <% else %>
+            <%= attachment_image_tag @top_banner, :image %>
+            <% end %>
+          </div>
+          <div class="shop-list_content">
+            <h2><%= favorite.name %></h2>
+            <dl>
+              <% if favorite.access.blank? %>
+              <% else %>
+              <dt>アクセス：</dt>
+              <dd><%= favorite.access %></dd>
+              <% end %>
+            </dl>
+            <dl>
+              <dt>住所：</dt>
+              <dd><%= favorite.address %></dd>
+            </dl>
+            <dl>
+              <% if favorite.business_hours.blank? %>
+              <% else %>
+              <dt>営業時間：</dt>
+              <dd><%= favorite.business_hours %></dd>
+              <% end %>
+              <% if favorite.holiday.blank? %>
+              <% else %>
+              <dt>定休日：</dt>
+              <dd><%= favorite.holiday %></dd>
+              <% end %>
+            </dl>
+            <dl>
+              <dt>レビュー：</dt>
+              <dd><%= favorite.reviews.count %>件</dd>
+            </dl>
+          </div>
+        </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</main>

@@ -8,7 +8,14 @@
       <p><%= current_customer.nickname %></p>
     </div>
     <ul>
-      <% if Favorite.exists?(@customer) %>
+      <% if @favorite.blank? %>
+      <li>
+        <div class="mypage-content_list">
+          <%= image_tag('shop-create') %>
+          <h2>お気に入り店舗一覧</h2>
+        </div>
+      </li>
+      <% else %>
       <li>
         <%= link_to like_customers_path do %>
         <div class="mypage-content_list">
@@ -16,13 +23,6 @@
           <h2>お気に入り店舗一覧</h2>
         </div>
         <% end %>
-      </li>
-      <% else %>
-      <li>
-        <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
-          <h2>お気に入り店舗一覧</h2>
-        </div>
       </li>
       <% end %>
       <% if current_customer.reviews.blank? %>
