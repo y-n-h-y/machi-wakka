@@ -13,7 +13,11 @@
       <%= link_to shop_path(like.shop&.id) do %>
         <div class="shop-list_detail">
           <div class="shop-list_image">
-
+            <% if like.shop&.top_banners.blank? %>
+            <%= image_tag('no-image.png') %>
+            <% else %>
+            <%= attachment_image_tag @top_banner, :image %>
+            <% end %>
           </div>
           <div class="shop-list_content">
             <h2><%= like.shop&.name %></h2>

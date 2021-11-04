@@ -1,6 +1,8 @@
 class Public::CustomersController < ApplicationController
   def like
     @favorites = current_customer.favorites
+    @shop = @favorites.where(shop_id: params[:shop_id])
+    @top_banner = TopBanner.find(1)
   end
 
   def top
