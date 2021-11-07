@@ -7,16 +7,17 @@
     <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
     <% end %>
   </div>
+  <div class="shop-list">
   <ul>
     <% @favorites.each do |like| %>
     <li>
       <%= link_to shop_path(like.shop&.id) do %>
         <div class="shop-list_detail">
           <div class="shop-list_image">
-            <% if like.shop&.top_banners.blank? %>
+            <% if like.shop&.image_id.blank? %>
             <%= image_tag('no-image.png') %>
             <% else %>
-            <%= attachment_image_tag @top_banner, :image %>
+            <%= attachment_image_tag like.shop, :image %>
             <% end %>
           </div>
           <div class="shop-list_content">
@@ -54,4 +55,5 @@
     </li>
     <% end %>
   </ul>
+  </div>
 </main>

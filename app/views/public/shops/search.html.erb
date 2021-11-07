@@ -6,10 +6,10 @@
         <%= link_to shop_path(shop) do %>
         <div class="shop-list_detail">
           <div class="shop-list_image">
-            <% if shop.top_banners.blank? %>
+            <% if shop.image_id.blank? %>
             <%= image_tag('no-image.png') %>
             <% else %>
-            <%= attachment_image_tag @top_banner, :image %>
+            <%= attachment_image_tag shop, :image %>
             <% end %>
           </div>
           <div class="shop-list_content">

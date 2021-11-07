@@ -14,6 +14,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.integer :credit_card
       t.integer :cash_less
       t.string :homepage
+      t.string :image_id
       t.string :logo_id
 
       t.timestamps

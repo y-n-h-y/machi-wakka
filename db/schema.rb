@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_154104) do
     t.integer "credit_card"
     t.integer "cash_less"
     t.string "homepage"
+    t.string "image_id"
     t.string "logo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
