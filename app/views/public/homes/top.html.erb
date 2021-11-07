@@ -23,4 +23,24 @@
       <% end %>
     </div>
     </div>
+    <div class="shop-lank">
+      <h2 class="lank-title">おすすめのお店</h2>
+      <ul class="lank-slider">
+        <% @shop.each do |shop| %>
+        <li>
+          <%= link_to shop_path(shop) do %>
+          <div class="shop-lank_list">
+            <div class="shop-lank_list-img"><%= attachment_image_tag shop, :image %></div>
+            <p><%= shop.name %></p>
+            <p><%= shop.access %></p>
+            <p>お気に入り：<%= shop.favorites.count %>件</p>
+          </div>
+          <% end %>
+        <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="new-review-list">
+
+    </div>
 </main>

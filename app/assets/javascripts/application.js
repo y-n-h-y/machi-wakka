@@ -41,25 +41,45 @@ $(function() {
 $(document).ready(function() {
   $('.slider').slick({
     centerMode: true,
+    arrows: true,
     autoplay: true,
     dots: true,
-    centerPadding: '70px',
+    centerPadding: 0,
     slidesToShow: 3,
     responsive: [{
         breakpoint: 768,
         settings: {
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 3,
         }
       },
       {
         breakpoint: 480,
         settings: {
-          arrows: false,
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+});
+
+$(document).ready(function() {
+  $('.lank-slider').slick({
+    arrows: true,
+    autoplay: true,
+    dots: false,
+    slidesToShow: 3,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
         }
       }
     ]
