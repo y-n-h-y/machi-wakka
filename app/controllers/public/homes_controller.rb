@@ -1,4 +1,5 @@
 class Public::HomesController < ApplicationController
   def top
+    @shop = Shop.find(Favorite.group(:shop_id).order('count(shop_id) desc').limit(4).pluck(:shop_id))
   end
 end
