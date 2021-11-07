@@ -41,6 +41,15 @@
       </ul>
     </div>
     <div class="new-review-list">
-
+      <h2 class="lank-title">新着レビュー</h2>
+      <ul>
+        <% @reviews.each do |review| %>
+        <li>
+          <div class="review-shop">
+            <p><&= link_to review.shop.name shop_path(review.shop.id) %></p>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
 </main>
