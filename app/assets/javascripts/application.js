@@ -66,7 +66,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $('.lank-slider').slick({
-    arrows: true,
     autoplay: true,
     dots: false,
     slidesToShow: 3,
