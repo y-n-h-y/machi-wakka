@@ -106,6 +106,18 @@
       </li>
       <li>
         <dl>
+          <dt>メイン画像</dt>
+          <dd>
+            <% if current_admin.shop.image_id.blank? %>
+            未設定
+            <% else %>
+            <%= attachment_image_tag current_admin.shop, :image %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
           <dt>ロゴマーク</dt>
           <dd>
             <% if current_admin.shop.logo_id.blank? %>

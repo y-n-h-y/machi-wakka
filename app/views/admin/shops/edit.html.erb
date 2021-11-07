@@ -50,6 +50,10 @@
       <%= f.text_field :homepage %>
     </div>
     <div class="form_group">
+      <%= f.label :image, "メイン画像" %>
+      <%= f.attachment_field :image, class: 'logo-form' %>
+    </div>
+    <div class="form_group">
       <%= f.label :logo, "ロゴマーク" %>
       <%= f.attachment_field :logo, class: 'logo-form' %>
     </div>

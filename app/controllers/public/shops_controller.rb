@@ -21,7 +21,6 @@ class Public::ShopsController < ApplicationController
 
   def search
     @shops = @q.result
-    @top_banner = TopBanner.find(1)
   end
 
   private
@@ -31,6 +30,6 @@ class Public::ShopsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:state_eq, :shop_genre_eq, :city_or_address_cont)
+    params.require(:q).permit(:address_cont, :shop_genre_eq)
   end
 end

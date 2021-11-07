@@ -9,6 +9,7 @@ class Shop < ApplicationRecord
 
   belongs_to :admin
 
+  attachment :image
   attachment :logo
 
 
