@@ -43,10 +43,13 @@
     <div class="new-review-list">
       <h2 class="lank-title">新着レビュー</h2>
       <ul>
-        <% @review_shop.each do |review_shop| %>
+        <% @reviews.each do |review| %>
         <li>
           <div class="review-shop">
-            <p><%= link_to review_shop.name, shop_path(review_shop)# %></p>
+            <div class="review-shop_head">
+              <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
+              <p><%= review.created_at %></p>
+            </div>
           </div>
         </li>
         <% end %>
