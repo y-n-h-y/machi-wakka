@@ -40,19 +40,27 @@
         </li>
       </ul>
     </div>
-    <div class="new-review-list">
-      <h2 class="lank-title">新着レビュー</h2>
-      <ul>
-        <% @reviews.each do |review| %>
-        <li>
-          <div class="review-shop">
-            <div class="review-shop_head">
-              <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
-              <p><%= review.created_at %></p>
-            </div>
+  <div class="review-list">
+    <% if @reviews.blank? %>
+    <% else %>
+    <h2 class="review-title">新着レビュー</h2>
+    <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="review-shop">
+          <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
+        </div>
+        <div class="review_list">
+          <div class="name-create">
+            <p><%= review.customer.nickname %>さん</p>
+            <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
           </div>
-        </li>
-        <% end %>
-      </ul>
-    </div>
+          <p class="review_title"><%= review.title %></p>
+          <p class="review_content"><%= review.content %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
 </main>
