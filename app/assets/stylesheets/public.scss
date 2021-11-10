@@ -110,6 +110,9 @@ main {
               font-weight: bold;
               color: #68b6e6;
             }
+            p:last-child {
+              padding-bottom: 20px;
+            }
           }
         }
       }
