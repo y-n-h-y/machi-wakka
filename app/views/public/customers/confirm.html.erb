@@ -1,2 +1,14 @@
-<h1>Public::Customers#confirm</h1>
-<p>Find me in app/views/public/customers/confirm.html.erb</p>
+<main>
+  <div class="withdrawal">
+    <p><i class="fas fa-exclamation-circle"></i>退会手続きの前にご確認ください</p>
+    <div class="withdrawal_text">
+      <p>会員を退会された場合には、現在保存されている会員登録情報やお気に入り登録をした店舗の履歴が閲覧できなくなります退会をする場合は「退会する」をクリックしてください。</p>
+    </div>
+    <%= form_with(url:withdrawal_path, local:true, method: :patch) do |f| %>
+    <div class="decision">
+      <%= link_to "退会しない", customer_path(current_customer) %>
+      <%= f.submit "退会する", data: { confirm: "本当に退会しますか？"}, class: 'button' %>
+    </div>
+    <% end %>
+  </div>
+</main>

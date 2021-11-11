@@ -29,9 +29,11 @@ Rails.application.routes.draw do
       collection do
         get :like
         get :top
+        get :confirm
       end
       resources :reviews, only: [:index]
     end
+    patch '/withdrawal' => 'customers#withdrawal'
   end
 
   namespace :admin do

@@ -30,11 +30,15 @@ class Public::CustomersController < ApplicationController
   end
 
   def withdrawal
+    @customer = current_customer
+    @customer.update(is_active: "invaild")
+    reset_session
+    redirect_to root_path
   end
 
   private
 
   def customer_params
-    params.require(:customer).permit(:nickname, :email, :state, :city)
+    params.require(:customer).permit(:nickname, :email, :state, :city, :is_active)
   end
 end

@@ -15,7 +15,7 @@ class Public::ShopsController < ApplicationController
     @items = @shop.items
     @news = @shop.news
     @services = @shop.services
-    @reviews = @shop.reviews
+    @reviews = @shop.reviews.order(created_at: :desc)
     @review = Review.new
   end
 

@@ -72,6 +72,66 @@ h2 {
       }
     }
   }
+  .withdrawal-action {
+    padding: 20px 0 50px 0;
+    text-align: center;
+    a {
+      font-size: 0.8rem;
+      color: #CC0000;
+    }
+  }
+}
+
+.withdrawal {
+  padding: 80px 0;
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #990000;
+    .fa-exclamation-circle {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 3rem;
+      color: #990000;
+    }
+  }
+  .withdrawal_text {
+    width: 450px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    p {
+      font-size: 0.9rem;
+      text-align: justify;
+      text-justify: distribute;
+      line-height: 30px;
+      color: #777777;
+    }
+  }
+  .decision {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+    padding: 40px 0;
+    a {
+      display: block;
+      padding: 10px 30px;
+      border: solid 1px #68b6e6;
+      background-color: #68b6e6;
+      border-radius: 3rem;
+      font-size: 0.8rem;
+      color: #ffffff;
+    }
+    input[type=submit] {
+      width: 130px;
+      border-radius: 3rem;
+      border: solid 1px #AA0000;
+      background-color: #AA0000;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
 }
 
 .login-action,
