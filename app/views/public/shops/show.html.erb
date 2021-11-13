@@ -10,13 +10,13 @@
       <% if @shop.favorited_by?(current_customer) %>
       <%= link_to shop_favorites_path(@shop, @favorite), method: :delete do %>
       <div class="favorite-mark">
-        <p class="favorite-text">お気に入り削除&emsp;<i class="fas fa-star"></i></p>
+        <p class="favorite-text">ブックマーク解除&emsp;<i class="fas fa-star"></i></p>
       </div>
     <% end %>
     <% else %>
     <%= link_to shop_favorites_path(@shop), method: :post do %>
       <div class="favorite-mark">
-        <p class="favorite-text">お気に入り追加&emsp;<i class="far fa-star"></i></p>
+        <p class="favorite-text">ブックマーク&emsp;<i class="far fa-star"></i></p>
       </div>
     <% end %>
     <% end %>
@@ -111,7 +111,13 @@
             <li>
               <div class="review_list">
                 <div class="name-create">
-                  <p><%= review.customer.nickname %>さん</p>
+                  <p>
+                    <% if review.customer.is_active == "invaild" %>
+                    退会済みユーザー
+                    <% else %>
+                    <%= review.customer.nickname %>さん
+                    <% end %>
+                  </p>
                   <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
                 </div>
                 <p class="review_title"><%= review.title %></p>
