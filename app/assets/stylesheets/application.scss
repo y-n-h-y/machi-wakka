@@ -72,6 +72,24 @@ header {
 }
 
 footer {
-  height: 150px;
   background-color: #13ae67;
+  .footer-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 300px;
+      li {
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
 }
