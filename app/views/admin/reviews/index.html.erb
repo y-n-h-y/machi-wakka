@@ -16,7 +16,13 @@
   <% @reviews.each do |review| %>
   <ul class="reviews-content">
     <li><%= review.created_at.strftime('%Y.%m.%d')  %></li>
-    <li><%= review.customer.nickname %></li>
+    <li>
+      <% if review.customer.is_active == "invaild" %>
+      退会済みユーザー
+      <% else %>
+      <%= review.customer.nickname %>
+      <% end %>
+    </li>
     <li><%= link_to review.title, admin_shop_review_path(@shop, review) %></li>
   </ul>
   <% end %>
