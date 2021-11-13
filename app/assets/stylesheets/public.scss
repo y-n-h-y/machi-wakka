@@ -157,45 +157,92 @@ main {
         }
       }
     }
-  }//店舗一覧表示
-  .shop-list {
-    background-color: #f8f8f8;
-    ul {
-      width: 1000px;
-      max-width: 90%;
+  } //店舗一覧表示
+  .shops {
+    display: flex;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    .search {
+      width: 300px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 70px 0;
-      li {
+      .search-form {
+        width: 90%;
+        margin: 0 auto;
         padding: 20px 0;
-        a {
-          .shop-list_detail {
-            display: flex;
-            padding: 20px 0;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-            .shop-list_image {
-              width: 300px;
-              padding-left: 20px;
-              img {
-                width: 100%;
-                border-radius: 10px;
-              }
+        .search-form_list {
+          padding: 10px 0;
+          select,
+          input[type=text] {
+            width: 100%;
+            height: 40px;
+            padding: 0 20px;
+            background-color: #f5f5f5;
+            border: solid 0px;
+          }
+        }
+        .search-form_action {
+          padding-top: 20px;
+          text-align: center;
+          button {
+            width: 120px;
+            height: 40px;
+            border: 0px;
+            background-color: #68b6e6;
+            border-radius: 3rem;
+            cursor: pointer;
+            .fa-search {
+              color: #ffffff;
             }
-            .shop-list_content h2 {
-              padding: 10px 0 15px 20px;
-              text-align: left;
-              color: #68b6e6;
-            }
-            dl {
+          }
+        }
+      }
+    }
+    .shop-list {
+      width: 100%;
+      background-color: #f8f8f8;
+      .no-result {
+        padding: 250px 0;
+        text-align: center;
+      }
+      ul {
+        width: 900px;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 70px 0;
+        li {
+          padding: 20px 0;
+          a {
+            .shop-list_detail {
               display: flex;
-              padding: 5px 0 5px 20px;
-              dt,
-              dd {
-                color: #555555;
+              padding: 20px 0;
+              background-color: #ffffff;
+              border-radius: 10px;
+              box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+              .shop-list_image {
+                width: 300px;
+                padding-left: 20px;
+                img {
+                  width: 100%;
+                  border-radius: 10px;
+                }
               }
-              dd {
-                padding-right: 10px;
+              .shop-list_content h2 {
+                padding: 10px 0 15px 20px;
+                text-align: left;
+                color: #68b6e6;
+              }
+              dl {
+                display: flex;
+                padding: 5px 0 5px 20px;
+                dt,
+                dd {
+                  color: #555555;
+                }
+                dd {
+                  padding-right: 10px;
+                }
               }
             }
           }

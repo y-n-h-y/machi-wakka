@@ -1,5 +1,26 @@
 <main>
+  <div class="shops">
+    <div class="search">
+      <%= search_form_for @q, url: search_shops_path do |f| %>
+      <div class="search-form">
+        <div class="search-form_list">
+          <%= f.text_field :address_cont, placeholder: "エリア" %>
+        </div>
+        <div class="search-form_list">
+          <%= f.select :shop_genre_eq, Shop.shop_genres.map{|k, v| [Shop.shop_genres_i18n[k], v]} %>
+        </div>
+        <div class="search-form_action">
+          <%= f.button :type => "submit" do %>
+          <i class="fas fa-search">&emsp;検索</i>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   <div class="shop-list">
+    <% if @shops.blank? %>
+    <p class="no-result">検索条件に一致するお店が見つかりませんでした</p>
+    <% else %>
     <ul>
       <% @shops.each do |shop| %>
       <li>
@@ -47,5 +68,7 @@
       </li>
       <% end %>
     </ul>
+    <% end %>
+  </div>
   </div>
 </main>
