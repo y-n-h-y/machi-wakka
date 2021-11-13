@@ -20,6 +20,10 @@ class Admin::AdminsController < ApplicationController
   end
 
   def withdrawal
+    @admin = current_admin
+    @admin.update(is_active: "invaild")
+    reset_session
+    redirect_to root_path
   end
 
   private
