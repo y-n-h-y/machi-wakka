@@ -117,7 +117,47 @@ main {
         }
       }
     }
-  } //店舗一覧表示
+  }
+  .admin-action {
+    padding: 50px 0;
+    .admin-action_bg {
+      background-image: image-url('22106243_m.png');
+      background-size: cover;
+      .admin-action_box {
+        width: 800px;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 50px 0;
+        h2 {
+          color: #ffffff;
+        }
+        p {
+          width: 90%;
+          margin: 0 auto;
+          text-align: justify;
+          text-justify: distribute;
+          line-height: 32px;
+          color: #ffffff;
+        }
+        .new-admin-action {
+          padding: 40px 0 20px 0;
+          text-align: center;
+          a {
+            padding: 12px 30px;
+            border: solid 1px #ffffff;
+            border-radius: 3rem;
+            color: #ffffff;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            &:hover {
+              background-color: #ffffff;
+              color: #555555;
+            }
+          }
+        }
+      }
+    }
+  }//店舗一覧表示
   .shop-list {
     background-color: #f8f8f8;
     ul {
