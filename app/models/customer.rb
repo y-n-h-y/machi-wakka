@@ -24,6 +24,12 @@ class Customer < ApplicationRecord
     super && (self.is_active === "vaild")
   end
 
+  def customer_status
+      if is_active == "invaild"
+          nickname == "退会済みユーザー"
+      end
+  end
+
   enum is_active: { vaild: true, invaild: false }
 
 end
