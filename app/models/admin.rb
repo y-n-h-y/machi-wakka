@@ -10,4 +10,10 @@ class Admin < ApplicationRecord
   has_many :top_banners, dependent: :destroy
 
   has_one :shop, dependent: :destroy
+
+  def active_for_authentication?
+    super && (self.is_active === "vaild")
+  end
+
+  enum is_active: { vaild: true, invaild: false }
 end
