@@ -7,10 +7,36 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
       models:
+        shop:
+          attributes:
+            name:
+              blank: 'が入力されていません'
+            postal_code:
+              blank: 'が入力されていません'
+            address:
+              blank: 'が入力されていません'
+            phone:
+              blank: 'が入力されていません'
+            business_hours:
+              blank: 'が入力されていません'
+            holiday:
+              blank: 'が入力されていません'
         top_banner:
           attributes:
             image:
               blank: 'がアップロードされていません'
+        service:
+          attributes:
+            title:
+              blank: 'が入力されていません'
+            content:
+              blank: 'が入力されていません'
+        news:
+          attributes:
+            title:
+              blank: 'が入力されていません'
+            content:
+              blank: 'が入力されていません'
         item:
           attributes:
             name:
@@ -19,16 +45,42 @@ ja:
               blank: 'が入力されていません'
             price:
               blank: 'が入力されていません'
+        review:
+          attributes:
+            title:
+              blank: 'が入力されていません'
+            content:
+              blank: 'が入力されてません'
     models:
+      shop: '店舗'
       top_banner: 'バナー'
+      service: 'サービス'
+      news: 'ニュース'
       item: '商品'
+      review: 'レビュー'
     attributes:
+      shop:
+        name: '会社名または店舗名'
+        postal_code: '郵便番号'
+        address: '住所'
+        phone: '電話番号'
+        business_hours: '営業時間'
+        holiday: '定休日'
       top_banner:
         image: '画像'
+      service:
+        title: 'タイトル'
+        content: '内容'
+      news:
+        title: 'タイトル'
+        content: '内容説明'
       item:
         name: '商品名'
         content: '商品説明'
         price: '金額'
+      review:
+        title: 'タイトル'
+        content: '内容'
   enums:
     shop:
       shop_genre:

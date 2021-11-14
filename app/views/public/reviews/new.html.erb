@@ -1,2 +1,31 @@
-<h1>Public::Reviews#new</h1>
-<p>Find me in app/views/public/reviews/new.html.erb</p>
+<main>
+  <div class="head">
+    <h1 class="head_mypage">レビュー作成フォーム</h1>
+  </div>
+  <div class="edit-review">
+    <div class="edit-review_inner">
+      <div class="validate">
+        <% if @review.errors.any? %>
+        <h3><%= @review.errors.count %>件のエラーが発生しました</h3>
+        <% @review.errors.full_messages.each do |message| %>
+        <p class="validate-text"><%= message %></p>
+        <% end %>
+        <% end %>
+      </div>
+      <p>レビューを投稿する</p>
+      <%= form_with model:[@shop, @review], url: {controller: 'reviews', action: 'create' }, local:true do |f| %>
+      <div class="edit-review_form">
+        <%= f.label :title, "タイトル" %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="edit-review_form">
+        <%= f.label :content, "内容" %>
+        <%= f.text_area :content %>
+      </div>
+      <div class="edit-review_action">
+        <%= f.submit "保存する" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</main>
