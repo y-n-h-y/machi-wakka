@@ -2,6 +2,14 @@
   <div class="head">
     <h1>トップバナー作成フォーム</h1>
   </div>
+  <div class="validate">
+  <% if @top_banner.errors.any? %>
+    <h3><%= @top_banner.errors.count %>件のエラーが発生しました</h3>
+    <% @top_banner.errors.full_messages.each do |message| %>
+      <p class="validate-text"><%= message %></p>
+    <% end %>
+  <% end %>
+  </div>
   <%= form_with model: @top_banner, url: {controller: 'top_banners', action: 'create' }, local:true do |f| %>
   <div class="form">
     <div class="form_group">

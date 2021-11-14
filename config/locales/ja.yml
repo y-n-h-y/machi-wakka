@@ -6,6 +6,29 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      models:
+        top_banner:
+          attributes:
+            image:
+              blank: 'がアップロードされていません'
+        item:
+          attributes:
+            name:
+              blank: 'が入力されていません'
+            content:
+              blank: 'が入力されていません'
+            price:
+              blank: 'が入力されていません'
+    models:
+      top_banner: 'バナー'
+      item: '商品'
+    attributes:
+      top_banner:
+        image: '画像'
+      item:
+        name: '商品名'
+        content: '商品説明'
+        price: '金額'
   enums:
     shop:
       shop_genre:

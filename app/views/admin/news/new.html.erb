@@ -2,6 +2,14 @@
   <div class="head">
     <h1>ニュース作成フォーム</h1>
   </div>
+  <div class="validate">
+  <% if @news.errors.any? %>
+    <h3><%= @news.errors.count %>件のエラーが発生しました</h3>
+    <% @news.errors.full_messages.each do |message| %>
+      <p class="validate-text"><%= message %></p>
+    <% end %>
+  <% end %>
+  </div>
   <%= form_with model: @news, url: {controller: 'news', action: 'create' }, local:true do |f| %>
   <div class="form">
     <div class="form_group">
