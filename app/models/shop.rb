@@ -12,6 +12,12 @@ class Shop < ApplicationRecord
   attachment :image
   attachment :logo
 
+  validates :name, presence: true
+  validates :postal_code, presence: true
+  validates :address, presence: true
+  validates :phone, presence: true
+  validates :business_hours, presence: true
+  validates :holiday, presence: true
 
   enum shop_genre: { gourmet: 0, shopping: 1, relaxation: 2, beauty_salon: 3, school: 4, private_school: 5,
                      dental: 6, hospital: 7, outdoor: 8, second_shop: 9, pet: 10,

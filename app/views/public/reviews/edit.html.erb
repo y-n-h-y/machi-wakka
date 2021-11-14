@@ -4,6 +4,14 @@
   </div>
   <div class="edit-review">
     <div class="edit-review_inner">
+      <div class="validate">
+        <% if @review.errors.any? %>
+        <h3><%= @review.errors.count %>件のエラーが発生しました</h3>
+        <% @review.errors.full_messages.each do |message| %>
+        <p class="validate-text"><%= message %></p>
+        <% end %>
+        <% end %>
+      </div>
       <p>レビューを投稿する</p>
       <%= form_with model:[@shop, @review], url: {controller: 'reviews', action: 'update' }, local:true do |f| %>
       <div class="edit-review_form">

@@ -4,7 +4,7 @@ class News < ApplicationRecord
 
   attachment :image
 
-  validates :titile, presence: true
+  validates :title, presence: true
   validates :content, presence: true
 
   enum genre: { info: 0, blog: 1 }

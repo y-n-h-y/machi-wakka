@@ -2,6 +2,14 @@
   <div class="head">
     <h1>サービス編集フォーム</h1>
   </div>
+  <div class="validate">
+  <% if @service.errors.any? %>
+    <h3><%= @service.errors.count %>件のエラーが発生しました</h3>
+    <% @service.errors.full_messages.each do |message| %>
+      <p class="validate-text"><%= message %></p>
+    <% end %>
+  <% end %>
+  </div>
   <%= form_with model: @service, url: {controller: 'services', action: 'update' }, local:true do |f| %>
   <div class="form">
     <div class="form_group">
