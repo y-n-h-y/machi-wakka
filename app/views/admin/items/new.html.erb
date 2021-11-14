@@ -2,6 +2,14 @@
   <div class="head">
     <h1>商品/メニュー作成フォーム</h1>
   </div>
+  <div class="validate">
+  <% if @item.errors.any? %>
+    <h3><%= @item.errors.count %>件のエラーが発生しました</h3>
+    <% @item.errors.full_messages.each do |message| %>
+      <p class="validate-text"><%= message %></p>
+    <% end %>
+  <% end %>
+  </div>
   <%= form_with model: @item, url: {controller: 'items', action: 'create' }, local:true do |f| %>
   <div class="form">
     <div class="form_group">
