@@ -10,6 +10,8 @@
   <div class="shop-list">
   <ul>
     <% @favorites.each do |like| %>
+    <% if like.shop.admin.is_active == "invaild" %>
+    <% else %>
     <li>
       <%= link_to shop_path(like.shop&.id) do %>
         <div class="shop-list_detail">
@@ -53,6 +55,7 @@
         </div>
       <% end %>
     </li>
+    <% end %>
     <% end %>
   </ul>
   </div>

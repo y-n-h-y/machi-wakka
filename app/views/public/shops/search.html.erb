@@ -23,6 +23,8 @@
     <% else %>
     <ul>
       <% @shops.each do |shop| %>
+      <% if shop.admin.is_active == "invaild" %>
+      <% else %>
       <li>
         <%= link_to shop_path(shop) do %>
         <div class="shop-list_detail">
@@ -66,6 +68,7 @@
         </div>
         <% end %>
       </li>
+      <% end %>
       <% end %>
     </ul>
     <% end %>

@@ -13,6 +13,8 @@
     <% else %>
     <ul>
     <% @reviews.each do |review| %>
+      <% if review.shop.admin.is_active == "invaild" %>
+      <% else %>
       <li>
         <div class="review-shop">
           <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
@@ -38,6 +40,7 @@
           </div>
         </div>
       </li>
+      <% end %>
       <% end %>
     </ul>
     <% end %>
