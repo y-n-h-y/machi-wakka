@@ -1,13 +1,18 @@
 class Public::ReviewsController < ApplicationController
   def new
+    @shop = Shop.find(params[:shop_id])
+    @review = Review.new
   end
 
   def create
     @shop = Shop.find(params[:shop_id])
     @review = current_customer.reviews.new(review_params)
     @review.shop_id = @shop.id
-    @review.save
-    redirect_to shop_path(@shop)
+    if @review.save
+      redirect_to shop_path(@shop)
+    else
+      render :new
+    end
   end
 
   def index
