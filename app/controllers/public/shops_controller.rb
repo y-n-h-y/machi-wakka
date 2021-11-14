@@ -4,7 +4,6 @@ class Public::ShopsController < ApplicationController
 
   def index
     @shops = Shop.all
-    @top_banner = TopBanner.find(1)
     # @search = Shop.search(search_params)
     # @shops = @search.result(distinct: true)
   end

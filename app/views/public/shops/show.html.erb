@@ -144,30 +144,7 @@
           <% end %>
           <% if customer_signed_in? %>
           <div class="new-review">
-            <div class="new-review_inner">
-            <div class="validate">
-              <% if @review.errors.any? %>
-              <h3><%= @review.errors.count %>件のエラーが発生しました</h3>
-              <% @review.errors.full_messages.each do |message| %>
-              <p class="validate-text"><%= message %></p>
-              <% end %>
-              <% end %>
-            </div>
-            <p>レビューを投稿する</p>
-            <%= form_with model:[@shop, @review], local:true do |f| %>
-            <div class="new-review_form">
-              <%= f.label :title, "タイトル" %>
-              <%= f.text_field :title %>
-            </div>
-            <div class="new-review_form">
-              <%= f.label :content, "内容" %>
-              <%= f.text_area :content %>
-            </div>
-            <div class="new-review_action">
-              <%= f.submit "投稿する" %>
-            </div>
-            <% end %>
-            </div>
+            <%= link_to "レビューを投稿する", new_shop_review_path(@shop) %>
           </div>
           <% else %>
           <p class="no-review">会員登録後レビュー投稿が可能となります</p>
