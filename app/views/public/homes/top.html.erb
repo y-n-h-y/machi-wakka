@@ -46,6 +46,8 @@
     <h2 class="review-title">新着レビュー</h2>
     <ul>
     <% @reviews.each do |review| %>
+      <% if review.shop.admin.is_active == "invaild" %>
+      <% else %>
       <li>
         <div class="review-shop">
           <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
@@ -65,6 +67,7 @@
           <p class="review_content"><%= review.content %></p>
         </div>
       </li>
+      <% end %>
       <% end %>
     </ul>
     <% end %>
