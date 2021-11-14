@@ -2,13 +2,13 @@
   <div class="withdrawal">
     <p><i class="fas fa-exclamation-circle"></i>退会手続きの前にご確認ください</p>
     <div class="withdrawal_text">
-      <p>会員を退会された場合には、現在保存されている会員登録情報やお気に入り登録をした店舗の履歴が閲覧できなくなります退会をする場合は「退会する」をクリックしてください。</p>
+      <p>出店者会員を退会された場合には、現在登録されているお店の情報やブックマーク・レビューの履歴を公開することができなくなります。退会をする場合は「退会する」をクリックしてください。</p>
     </div>
     <%= form_with(url:admin_withdrawal_path, local:true, method: :patch) do |f| %>
     <div class="decision">
       <%= link_to "退会しない", admin_path(current_customer) %>
       <%= f.submit "退会する", data: { confirm: "本当に退会しますか？"}, class: 'button' %>
-    </div>s
+    </div>
     <% end %>
   </div>
 </main>
