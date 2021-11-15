@@ -1,3 +1,7 @@
+body {
+  background-color: #fcfcfc;
+}
+
 main {
   .top {
     position: relative;
@@ -91,6 +95,7 @@ main {
             margin: 0 auto;
             box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            background-color: #ffffff;
             .shop-lank_list-img {
               width: 100%;
               padding-bottom: 15px;
@@ -167,6 +172,7 @@ main {
       width: 300px;
       max-width: 100%;
       margin: 0 auto;
+      background-color: #ffffff;
       .search-form {
         width: 90%;
         margin: 0 auto;
@@ -510,6 +516,7 @@ main {
     }
   }
   .head {
+    background-color: #ffffff;
     .head_mypage {
       padding: 10px 0;
       font-size: 1.5rem;
@@ -542,21 +549,30 @@ main {
     ul {
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
       li {
         width: calc(90%/3);
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+        background-color: #ffffff;
+        @media screen and (max-width: 600px) {
+          width: 90%;
+          margin: 30px auto;
+        }
         .mypage-content_list {
           width: 90%;
           margin: 0 auto;
           text-align: center;
           img {
-            width: 80%;
+            width: 60%;
           }
           h2 {
             width: 90%;
             margin: 0 auto;
             padding: 10px 0 30px 0;
+            color: #666666;
           }
         }
       }

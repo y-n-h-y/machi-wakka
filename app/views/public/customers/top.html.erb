@@ -11,7 +11,7 @@
       <% if @favorite.blank? %>
       <li>
         <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
+          <%= image_tag('bookmarck') %>
           <h2>ブックマークしたお店</h2>
         </div>
       </li>
@@ -19,7 +19,7 @@
       <li>
         <%= link_to like_customers_path do %>
         <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
+          <%= image_tag('bookmarck') %>
           <h2>ブックマークしたお店覧</h2>
         </div>
         <% end %>
@@ -28,7 +28,7 @@
       <% if current_customer.reviews.blank? %>
       <li>
         <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
+          <%= image_tag('review-icon') %>
           <h2>レビュー履歴</h2>
         </div>
       </li>
@@ -36,7 +36,7 @@
       <li>
         <%= link_to customer_reviews_path(current_customer) do %>
         <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
+          <%= image_tag('review-icon') %>
           <h2>レビュー履歴</h2>
         </div>
         <% end %>
@@ -45,7 +45,7 @@
       <li>
         <%= link_to customer_path(current_customer) do %>
         <div class="mypage-content_list">
-          <%= image_tag('shop-create') %>
+          <%= image_tag('profile-icon') %>
           <h2>プロフィール</h2>
         </div>
         <% end %>

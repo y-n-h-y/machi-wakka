@@ -26,16 +26,38 @@
         <nav>
           <ul>
             <% if customer_signed_in? %>
-            <li>ようこそ<%= current_customer.nickname %>さん</li>
-            <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-            <li class="mypage-action"><%= link_to top_customers_path do %><i class="fas fa-user"></i><% end %></li>
+            <li class="user-name">ようこそ<%= current_customer.nickname %>さん</li>
+            <li><%= link_to  destroy_customer_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt"><span class="non-text">&thinsp;ログアウト</span></i>
+                <% end %>
+            </li>
+            <li class="mypage-action">
+              <%= link_to top_customers_path do %><i class="fas fa-user"></i>
+              <% end %>
+            </li>
             <% elsif admin_signed_in? %>
-            <li><%= link_to "店舗作成", top_admin_shops_path %></li>
-            <li><%= link_to "マイページ", admin_path %></li>
-            <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+            <li>
+              <%= link_to top_admin_shops_path do %>
+              <i class="fas fa-store"><span class="non-text">&thinsp;店舗作成</span></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_admin_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt"><span class="non-text">&thinsp;ログアウト</span></i>
+              <% end %>
+            </li>
+            <li class="mypage-action"><%= link_to admin_path do %><i class="fas fa-user"></i><% end %></li>
             <% else %>
-            <li><%= link_to "会員登録", new_customer_registration_path %></li>
-            <li><%= link_to "ログイン", new_customer_session_path %></li>
+            <li>
+              <%= link_to new_customer_registration_path do %>
+              <i class="fas fa-user-plus"><span class="non-text">&thinsp;会員登録</span></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_customer_session_path do %>
+              <i class="fas fa-sign-in-alt"><span class="non-text">&thinsp;ログイン</span></i>
+              <% end %>
+            </li>
             <% end %>
           </ul>
         </nav>
