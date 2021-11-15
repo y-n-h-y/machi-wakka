@@ -27,11 +27,22 @@ main {
     }
     h1 {
       position: absolute;
+      width: 90%;
+      text-align: center;
       color: #ffffff;
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+      @media screen and (max-width: 600px) {
+        top: 30%;
+      }
+      .br {
+        display: none;
+        @media screen and (max-width: 600px) {
+          display: inline;
+        }
+      }
     }
     .search {
       position: absolute;
@@ -44,11 +55,18 @@ main {
       left: 50%;
       bottom: 15%;
       transform: translateX(-50%);
+      @media screen and (max-width: 600px) {
+        border-radius: 1rem;
+        bottom: 10%;
+      }
       .search-form {
         display: flex;
         align-items: center;
         width: 90%;
         margin: 0 auto;
+        @media screen and (max-width: 600px) {
+          display: block;
+        }
         .search-form_list {
           padding: 0 10px;
           select,
@@ -58,10 +76,17 @@ main {
             padding: 0 20px;
             background-color: #f5f5f5;
             border: solid 0px;
+            @media screen and (max-width: 600px) {
+              width: 100%;
+              margin: 10px auto;
+            }
           }
         }
         .search-form_action {
           padding-left: 10px;
+          @media screen and (max-width: 600px) {
+            text-align: center;
+          }
           button {
             width: 45px;
             height: 45px;
