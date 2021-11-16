@@ -386,10 +386,15 @@ main {
         .item {
           >ul {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             >li {
               width: calc(90%/2);
               box-shadow: 0 0 0 0;
+              @media screen and (max-width: 768px) {
+                width: 90%;
+                margin: 20px auto;
+              }
               >a {
                 .item_inner {
                   display: flex;
@@ -397,11 +402,19 @@ main {
                   padding: 10px 0;
                   background-color: #ffffff;
                   border-radius: 10px;
+                  @media screen and (max-width: 540px) {
+                    display: block;
+                  }
                   .item_inner-image {
                     width: 200px;
                     height: 130px;
                     margin-left: 10px;
                     overflow: hidden;
+                    @media screen and (max-width: 540px) {
+                      width: 90%;
+                      margin: 5px auto;
+                      height: auto;
+                    }
                     img {
                       width: 100%;
                       border-radius: 10px;
@@ -415,6 +428,7 @@ main {
                       color: #68b6e6;
                     }
                     p:last-child {
+                      padding-bottom: 10px;
                       color: #888888;
                     }
                   }
@@ -425,6 +439,7 @@ main {
         } //店舗詳細ニュース
         .news {
           >ul {
+            display: block;
             padding: 50px 0;
             >li {
               width: 100%;

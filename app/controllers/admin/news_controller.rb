@@ -14,7 +14,7 @@ class Admin::NewsController < ApplicationController
   end
 
   def index
-    @current_news = current_admin.shop.news
+    @current_news = current_admin.shop.news.order(created_at: :desc)
     @shop = current_admin.shop.id
   end
 
