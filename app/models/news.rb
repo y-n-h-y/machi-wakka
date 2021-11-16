@@ -7,5 +7,5 @@ class News < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  enum genre: { info: 0, blog: 1 }
+  enum genre: { info: 0, blog: 1, event: 2 }
 end

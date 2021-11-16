@@ -69,7 +69,11 @@
               <%= link_to shop_item_path(@shop, item) do %>
               <div class="item_inner">
                 <div class="item_inner-image">
+                  <% if item.image_id.blank? %>
+                  <%= image_tag('no-image.png') %>
+                  <% else %>
                   <%= attachment_image_tag item, :image %>
+                  <% end %>
                 </div>
                 <div class="item_inner-caption">
                   <p><%= item.name %></p>
@@ -146,6 +150,7 @@
           <div class="new-review">
             <%= link_to "レビューを投稿する", new_shop_review_path(@shop) %>
           </div>
+          <% elsif admin_signed_in? %>
           <% else %>
           <p class="no-review">会員登録後レビュー投稿が可能となります</p>
           <% end %>

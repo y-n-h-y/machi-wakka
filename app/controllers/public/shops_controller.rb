@@ -12,7 +12,7 @@ class Public::ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     @top_banners = @shop.top_banners
     @items = @shop.items
-    @news = @shop.news
+    @news = @shop.news.order(created_at: :desc)
     @services = @shop.services
     @reviews = @shop.reviews.order(created_at: :desc)
     @review = Review.new
