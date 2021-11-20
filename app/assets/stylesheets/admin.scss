@@ -1,0 +1,477 @@
+main {
+  .head {
+    border-bottom: solid 1px #eeeeee;
+    h1 {
+      width: 90%;
+      margin: 0 auto;
+      padding: 35px 0;
+    }
+  }
+  .layer {
+    background-color: #eeeeee;
+    a {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding: 10px 0;
+      font-size: 0.8rem;
+      i {
+        color: #666666;
+        font-weight: 600;
+      }
+    }
+  } // マイページ
+  .menu {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: calc(90%/3);
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        @media screen and (max-width: 540px) {
+          width: 95%;
+          margin: 30px auto;
+        }
+        .menu_content {
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+          img {
+            width: 70%;
+          }
+          h2 {
+            padding: 10px 0;
+            color: #222222;
+          }
+          p {
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            text-align: justify;
+            text-justify: distribute;
+            font-size: 0.9rem;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+  .admin-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    li {
+      padding: 10px 0;
+      dl {
+        display: flex;
+        dt {
+          width: 180px;
+        }
+      }
+    }
+  }
+  .user-edit-action {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    a {
+      padding: 12px 25px;
+      background-color: #68b6e6;
+      border-radius: 3rem;
+      border: solid 1px #68b6e6;
+      font-size: 0.8rem;
+      color: #ffffff;
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      &:hover {
+        background-color: #ffffff;
+        color: #68b6e6;
+      }
+    }
+  } //店舗作成フォームページ
+  .shop-create {
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 0 50px 0;
+    p {
+      font-size: 1.1rem;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: calc(90%/4);
+        margin-top: 40px;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #ffffff;
+        @media screen and (max-width: 768px) {
+          width: calc(90%/2);
+        }
+        @media screen and (max-width: 540px) {
+          width: 95%;
+          margin: 30px auto;
+        }
+        .shop-create_content {
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+          img {
+            width: 80%;
+          }
+          h2 {
+            padding: 10px 0;
+            color: #222222;
+          }
+          p {
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            text-align: justify;
+            text-justify: distribute;
+            font-size: 0.9rem;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+  .shop-detail {
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 0;
+    .shop-edit-action {
+      padding-bottom: 30px;
+      text-align: right;
+      .fa-edit {
+        color: #16ae37;
+      }
+    }
+    ul {
+      border-radius: 10px;
+      background-color: #f7f7f7;
+      li {
+        dl {
+          display: flex;
+          padding: 0 10px;
+          dt {
+            width: 220px;
+            padding: 20px 0 20px 15px;
+            border-bottom: solid 2px #777777;
+            font-weight: bold;
+            color: #555555;
+          }
+          dd {
+            width: 100%;
+            padding: 20px 0 20px 15px;
+            border-bottom: solid 2px #cccccc;
+            color: #555555;
+          }
+        }
+      }
+      li:last-child {
+        dl {
+          dt,
+          dd {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+  } //一覧ページヘッダーテンプレート
+  .content-list {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    .new-action {
+      text-align: right;
+      a {
+        padding: 15px 25px;
+        background-color: #13ae67;
+        border: solid 1px #13ae67;
+        border-radius: 3rem;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover {
+          background-color: #ffffff;
+          i {
+            color: #13ae67;
+          }
+        }
+        i {
+          font-size: 0.9rem;
+          color: #ffffff;
+        }
+      }
+    }
+  } //商品詳細ページ
+  .menu-content {
+    width: 800px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 100px 0;
+    .menu-content_image {
+      img {
+        width: 100%;
+      }
+    }
+    h2 {
+      padding: 30px 0;
+      font-size: 1.8rem;
+      text-align: left;
+    }
+    p {
+      padding-bottom: 20px;
+    }
+    p:last-child {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  } //トップバナー一覧ページ
+  .banner {
+    >ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      >li {
+        width: calc(90%/3);
+        margin: 10px auto;
+        .banner-image {
+          img {
+            width: 100%;
+          }
+        }
+        .edit-action {
+          display: flex;
+          padding-bottom: 20px;
+          p {
+            padding-right: 20px;
+            .fa-edit {
+              color: #16ae37;
+            }
+            .fa-trash-alt {
+              color: #dd0000;
+            }
+          }
+        }
+      }
+    }
+  } //サービス一覧ページ
+  .service {
+    >ul {
+      padding: 50px 0;
+      >li {
+        h2 {
+          text-align: justify;
+          text-justify: distribute;
+        }
+        .edit-action {
+          display: flex;
+          padding: 20px 0;
+          p {
+            padding-right: 20px;
+            .fa-edit {
+              color: #16ae37;
+            }
+            .fa-trash-alt {
+              color: #dd0000;
+            }
+          }
+        }
+      }
+    }
+  } //news一覧ページ
+  .news {
+    >ul {
+      display: flex;
+      >li:first-child {
+        width: 180px;
+      }
+      >li:nth-child(2) {
+        width: 600px;
+      }
+      >li:nth-child(3) {
+        width: 100px;
+      }
+      >li:last-child {
+        width: 300px;
+      }
+      >li {
+        max-width: 100%;
+      }
+    }
+    .content-list_head {
+      margin-top: 50px;
+      li {
+        padding: 15px 0 15px 5px;
+        background-color: #eeeeee;
+        font-weight: bold;
+        color: #222222;
+      }
+    }
+    .content-list_inner {
+      li {
+        padding: 15px 0 15px 5px;
+        border-bottom: solid 1px #eeeeee;
+      }
+      li:last-child {
+        display: flex;
+        p {
+          padding-right: 20px;
+          .fa-edit {
+            color: #16ae37;
+          }
+          .fa-trash-alt {
+            color: #dd0000;
+          }
+        }
+      }
+    }
+  } //news詳細ページ
+  .news-content {
+    width: 900px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 70px 0;
+    >h2 {
+      padding-bottom: 10px;
+      text-align: justify;
+      text-justify: distribute;
+    }
+    .tag {
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #999999;
+      >p {
+        padding-right: 20px;
+      }
+    }
+    .news-content_image {
+      padding-top: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    >p {
+      padding-top: 30px;
+    }
+  } //商品一覧ページ
+  .item {
+    >ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 70px 0;
+      >li {
+        width: calc(90%/3);
+        margin: 10px auto;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        .image {
+          width: 90%;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            margin: 20px 0 10px 0;
+            border-radius: 10px;
+          }
+        }
+        .list-title {
+          width: 90%;
+          margin: 0 auto;
+          padding: 10px 0 0 0;
+          text-align: left;
+          color: #222222;
+        }
+        .mony {
+          width: 90%;
+          margin: 0 auto;
+          padding-bottom: 20px;
+          color: #222222;
+        }
+        .edit-action {
+          display: flex;
+          width: 90%;
+          margin: 0 auto;
+          padding-bottom: 20px;
+          p {
+            padding-right: 20px;
+            .fa-edit {
+              color: #16ae37;
+            }
+            .fa-trash-alt {
+              color: #dd0000;
+            }
+          }
+        }
+      }
+    }
+  } //レビュー一覧ページ
+  .reviews-list {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    ul {
+      display: flex;
+      li {
+        max-width: 100%;
+        padding-left: 10px;
+      }
+      li:first-child {
+        width: 120px;
+      }
+      li:nth-child(2) {
+        width: 150px;
+      }
+      li:last-child {
+        width: 900px;
+      }
+    }
+    .reviews-head {
+      padding: 20px 0;
+      background-color: #eeeeee;
+    }
+    .reviews-content {
+      padding: 10px 0;
+      border-bottom: solid 1px #eeeeee;
+    }
+  }
+  .review-detail {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    .review-detail_box {
+      width: 90%;
+      margin: 0 auto;
+      .review-detail_box_head {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #888888;
+      }
+      .review-detail_box_content {
+        padding-top: 30px;
+        >p:first-child {
+          padding-bottom: 15px;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        p {
+          color: #292929;
+        }
+      }
+    }
+  }
+  .withdrawal-action {
+    padding: 20px 0 50px 0;
+    text-align: center;
+    a {
+      font-size: 0.8rem;
+      color: #CC0000;
+    }
+  }
+}
