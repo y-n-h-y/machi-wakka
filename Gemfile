@@ -42,6 +42,7 @@ gem 'devise'
 gem 'ransack'
 gem "jquery-rails"
 gem 'kaminari','~> 1.2.1'
+gem "enum_help"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,7 +59,6 @@ group :development do
 
 
 
-  gem "enum_help"
 
   gem 'pry-byebug'
 
