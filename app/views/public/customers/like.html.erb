@@ -1,0 +1,62 @@
+<main>
+  <div class="head">
+    <h1 class="head_mypage">お気に入りリスト</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_customers_path do %>
+    <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
+    <% end %>
+  </div>
+  <div class="shop-list">
+  <ul>
+    <% @favorites.each do |like| %>
+    <% if like.shop.admin.is_active == "invaild" %>
+    <% else %>
+    <li>
+      <%= link_to shop_path(like.shop&.id) do %>
+        <div class="shop-list_detail">
+          <div class="shop-list_image">
+            <% if like.shop&.image_id.blank? %>
+            <%= image_tag('no-image.png') %>
+            <% else %>
+            <%= attachment_image_tag like.shop, :image %>
+            <% end %>
+          </div>
+          <div class="shop-list_content">
+            <h2><%= like.shop&.name %></h2>
+            <dl>
+              <% if like.shop&.access.blank? %>
+              <% else %>
+              <dt>アクセス：</dt>
+              <dd><%= like.shop&.access %></dd>
+              <% end %>
+            </dl>
+            <dl>
+              <dt>住所：</dt>
+              <dd><%= like.shop&.address %></dd>
+            </dl>
+            <dl>
+              <% if like.shop&.business_hours.blank? %>
+              <% else %>
+              <dt>営業時間：</dt>
+              <dd><%= like.shop&.business_hours %></dd>
+              <% end %>
+              <% if like.shop&.holiday.blank? %>
+              <% else %>
+              <dt>定休日：</dt>
+              <dd><%= like.shop&.holiday %></dd>
+              <% end %>
+            </dl>
+            <dl>
+              <dt>レビュー：</dt>
+              <dd><%= like.shop&.reviews.count %>件</dd>
+            </dl>
+          </div>
+        </div>
+      <% end %>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+  </div>
+</main>

@@ -1,0 +1,65 @@
+<main>
+  <div class="head">
+    <h1>登録情報</h1>
+  </div>
+  <div class="layer">
+    <%= link_to admin_path do %>
+    <i class="fas fa-chevron-left">&thinsp;マイページに戻る</i>
+    <% end %>
+  </div>
+    <ul class="admin-content">
+      <li>
+        <dl>
+          <dt>会社名</dt>
+          <dd><%= @admin.company_name %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>お名前</dt>
+          <dd>
+            <% if @admin.name.blank? %>
+            未登録
+            <% else %>
+            <%= @admin.name %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>フリガナ</dt>
+          <dd>
+            <% if @admin.name_kana.blank? %>
+            未登録
+            <% else %>
+            <%= @admin.name_kana %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>メールアドレス</dt>
+          <dd><%= @admin.email %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>電話番号</dt>
+          <dd>
+            <% if @admin.phone.blank? %>
+            未登録
+            <% else %>
+            <%= @admin.phone %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+    <div class="user-edit-action">
+      <%= link_to edit_admin_admin_path(@admin) do %>
+      <i class="far fa-edit">&thinsp;編集する</i>
+      <% end %>
+    </div>
+</main>

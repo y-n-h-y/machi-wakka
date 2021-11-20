@@ -1,0 +1,54 @@
+<main>
+  <div class="head">
+    <h1>出店者マイページ</h1>
+  </div>
+  <div class="menu">
+    <ul>
+      <li>
+        <%= link_to top_admin_shops_path do %>
+        <div class="menu_content">
+          <%= image_tag('shop-create') %>
+          <h2>店舗作成</h2>
+          <p>まちわっかに公開する、店舗情報・商品やメニュー・ニュースなどを作成することができます。</p>
+        </div>
+        <% end %>
+      </li>
+      <% if @shop.blank? %>
+      <li>
+        <div class="menu_content">
+          <%= image_tag('shop-create') %>
+          <h2>レビュー</h2>
+          <p>お客様からいただいたレビューの内容を確認することができます。</p>
+        </div>
+      </li>
+      <% elsif @shop.reviews.blank? %>
+      <li>
+        <div class="menu_content">
+          <%= image_tag('user-review') %>
+          <h2>レビュー</h2>
+          <p>お客様からいただいたレビューの内容を確認することができます。</p>
+        </div>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to admin_shop_reviews_path(@shop.id) do %>
+        <div class="menu_content">
+          <%= image_tag('user-review') %>
+          <h2>レビュー（<%= @shop.reviews.count %>）</h2>
+          <p>お客様からいただいたレビューの内容を確認することができます。</p>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to admin_admin_path(current_admin) do %>
+        <div class="menu_content">
+          <%= image_tag('admin-icon') %>
+          <h2>出店者情報</h2>
+          <p>出店者登録をした情報の確認と内容の編集をすることができます。</p>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</main>

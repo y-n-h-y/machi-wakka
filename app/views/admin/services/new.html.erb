@@ -1,0 +1,28 @@
+<main>
+  <div class="head">
+    <h1>サービス作成フォーム</h1>
+  </div>
+  <div class="validate">
+  <% if @service.errors.any? %>
+    <h3><%= @service.errors.count %>件のエラーが発生しました</h3>
+    <% @service.errors.full_messages.each do |message| %>
+      <p class="validate-text"><%= message %></p>
+    <% end %>
+  <% end %>
+  </div>
+  <%= form_with model: @service, url: {controller: 'services', action: 'create' }, local:true do |f| %>
+  <div class="form">
+    <div class="form_group">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form_group">
+      <%= f.label :content, "内容説明" %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  </div>
+  <% end %>
+</main>

@@ -1,0 +1,133 @@
+<main>
+  <div class="head">
+    <h1>店舗情報詳細</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_admin_shops_path do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗トップページに戻る</i>
+    <% end %>
+  </div>
+  <div class="shop-detail">
+    <div class="shop-edit-action">
+      <%= link_to edit_admin_shop_path(@shop) do %>
+      <i class="far fa-edit">&thinsp;編集する</i>
+      <% end %>
+    </div>
+    <ul>
+      <li>
+        <dl>
+          <dt>会社名または店舗名</dt>
+          <dd><%= current_admin.shop.name %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>お店のジャンル</dt>
+          <dd><%= current_admin.shop.shop_genre_i18n %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>郵便番号</dt>
+          <dd><%= current_admin.shop.postal_code %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>住所</dt>
+          <dd><%= current_admin.shop.address %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>電話番号</dt>
+          <dd><%= current_admin.shop.phone %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>アクセス</dt>
+          <dd>
+            <% if current_admin.shop.access.blank? %>
+            未設定
+            <% else %>
+            <%= current_admin.shop.access %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>駐車場の有無</dt>
+          <dd>
+            <% if current_admin.shop.parking.blank? %>
+            未設定
+            <% else %>
+            <%= current_admin.shop.parking %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>営業時間</dt>
+          <dd>
+            <% if current_admin.shop.business_hours.blank? %>
+            未設定
+            <% else %>
+            <%= current_admin.shop.business_hours %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>定休日</dt>
+          <dd>
+            <% if current_admin.shop.holiday.blank? %>
+            未設定
+            <% else %>
+            <%= current_admin.shop.holiday %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>ホームページURL</dt>
+          <dd>
+            <% if current_admin.shop.homepage.blank? %>
+            未設定
+            <% else %>
+            <%= current_admin.shop.homepage %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>メイン画像</dt>
+          <dd>
+            <% if current_admin.shop.image_id.blank? %>
+            未設定
+            <% else %>
+            <%= attachment_image_tag current_admin.shop, :image %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>ロゴマーク</dt>
+          <dd>
+            <% if current_admin.shop.logo_id.blank? %>
+            未設定
+            <% else %>
+            <%= attachment_image_tag current_admin.shop, :logo %>
+            <% end %>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</main>

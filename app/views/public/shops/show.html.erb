@@ -1,0 +1,217 @@
+<main>
+  <div class="head">
+    <% if @shop.logo_id.blank? %>
+    <p><%= @shop.name %></p>
+    <% else %>
+    <%= attachment_image_tag @shop, :logo %>
+    <% end %>
+    <% if customer_signed_in? %>
+    <div class="favorite">
+      <% if @shop.favorited_by?(current_customer) %>
+      <%= link_to shop_favorites_path(@shop, @favorite), method: :delete do %>
+      <div class="favorite-mark">
+        <p class="favorite-text">ブックマーク解除&emsp;<i class="fas fa-star"></i></p>
+      </div>
+    <% end %>
+    <% else %>
+    <%= link_to shop_favorites_path(@shop), method: :post do %>
+      <div class="favorite-mark">
+        <p class="favorite-text">ブックマーク&emsp;<i class="far fa-star"></i></p>
+      </div>
+    <% end %>
+    <% end %>
+    </div>
+    <% else %>
+    <% end %>
+  </div>
+  <div class="top">
+  <ul class="slider">
+    <% @top_banners.each do |banner| %>
+    <li><%= attachment_image_tag banner, :image %></li>
+    <% end %>
+  </ul>
+  <div class="basic-info">
+    <dl>
+      <dt><i class="fas fa-subway">&thinsp;アクセス</i></dt>
+      <dd><%= @shop.access %></dd>
+    </dl>
+    <dl>
+      <dt><i class="fas fa-map-marker-alt">&thinsp;&thinsp;住所</i></dt>
+      <dd><%= @shop.address %></dd>
+    </dl>
+    <dl>
+      <dt><i class="fas fa-clock">&thinsp;営業時間</i></dt>
+      <dd><%= @shop.business_hours %></dd>
+    </dl>
+  </div>
+  <div class="shop-content">
+    <ul class="shop-content_tab">
+      <li class="tab active">サービス</li>
+      <li class="tab">メニュー</li>
+      <li class="tab">ニュース</li>
+      <li class="tab">レビュー（<%= @reviews.count %>）</li>
+      <li class="tab">店舗情報</li>
+    </ul>
+    <div class="tab-area">
+      <div class="area show">
+        <div class="area-content service">
+        <% @services.each do |service| %>
+        <h2><%= service.title %></h2>
+        <p><%= service.content %></p>
+        <% end %>
+        </div>
+      </div>
+      <div class="area">
+        <div class="area-content item">
+          <ul>
+            <% @items.each do |item| %>
+            <li>
+              <%= link_to shop_item_path(@shop, item) do %>
+              <div class="item_inner">
+                <div class="item_inner-image">
+                  <% if item.image_id.blank? %>
+                  <%= image_tag('no-image.png') %>
+                  <% else %>
+                  <%= attachment_image_tag item, :image %>
+                  <% end %>
+                </div>
+                <div class="item_inner-caption">
+                  <p><%= item.name %></p>
+                  <p>¥<%= item.tax_price.to_s(:delimited) %></p>
+                </div>
+              </div>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="area">
+        <div class="area-content news">
+          <ul>
+            <% @news.each do |news| %>
+            <li>
+              <%= link_to shop_news_path(@shop, news) do %>
+              <div class="news_inner">
+                <div class="create-genre">
+                  <p><%= news.created_at.strftime('%Y.%m.%d') %> </p>
+                  <p><%= news.genre_i18n %></p>
+                </div>
+                <p><%= news.title %></p>
+              </div>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="area">
+        <div class="area-content review">
+          <% if @shop.reviews.blank? %>
+          <p class="no-review">現在レビューはございせん</p>
+          <% else %>
+          <ul>
+            <% @reviews.each do |review| %>
+            <li>
+              <div class="review_list">
+                <div class="name-create">
+                  <p>
+                    <% if review.customer.is_active == "invaild" %>
+                    退会済みユーザー
+                    <% else %>
+                    <%= review.customer.nickname %>さん
+                    <% end %>
+                  </p>
+                  <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
+                </div>
+                <p class="review_title"><%= review.title %></p>
+                <p class="review_content"><%= review.content %></p>
+                <% if review.customer == current_customer %>
+                <div class="edit-action">
+                  <p>
+                    <%= link_to edit_shop_review_path(@shop, review) do %>
+                    <i class="far fa-edit">&thinsp;編集する</i>
+                    <% end %>
+                  </p>
+                  <p>
+                    <%= link_to shop_review_path(@shop, review), method: :delete do %>
+                    <i class="far fa-trash-alt">&thinsp;削除する</i>
+                    <% end %>
+                  </p>
+                </div>
+                <% else %>
+                <% end %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+          <% end %>
+          <% if customer_signed_in? %>
+          <div class="new-review">
+            <%= link_to "レビューを投稿する", new_shop_review_path(@shop) %>
+          </div>
+          <% elsif admin_signed_in? %>
+          <% else %>
+          <p class="no-review">会員登録後レビュー投稿が可能となります</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="area">
+        <div class="area-content info">
+          <dl>
+            <dt>会社名</dt>
+            <dd><%= @shop.name %></dd>
+          </dl>
+          <dl>
+            <dt>郵便番号</dt>
+            <dd><%= @shop.postal_code %></dd>
+          </dl>
+          <dl>
+            <dt>住所</dt>
+            <dd><%= @shop.address %></dd>
+          </dl>
+          <dl>
+            <dt>電話番号</dt>
+            <dd><%= @shop.phone %></dd>
+          </dl>
+          <% if @shop.access.blank? %>
+          <% else %>
+          <dl>
+            <dt>アクセス</dt>
+            <dd><%= @shop.access %></dd>
+          </dl>
+          <% end %>
+          <% if @shop.parking.blank? %>
+          <% else %>
+          <dl>
+            <dt>駐車場</dt>
+            <dd><%= @shop.parking %></dd>
+          </dl>
+          <% end %>
+          <% if @shop.business_hours.blank? %>
+          <% else %>
+          <dl>
+            <dt>営業時間</dt>
+            <dd><%= @shop.business_hours %></dd>
+          </dl>
+          <% end %>
+          <% if @shop.holiday.blank? %>
+          <% else %>
+          <dl>
+            <dt>定休日</dt>
+            <dd><%= @shop.holiday %></dd>
+          </dl>
+          <% end %>
+          <% if @shop.homepage.blank? %>
+          <% else %>
+          <dl>
+            <dt>ホームページ</dt>
+            <dd><%= @shop.homepage %></dd>
+          </dl>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>

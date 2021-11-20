@@ -1,0 +1,88 @@
+<main>
+    <div class="top">
+      <ul class="top-img">
+        <li><%= image_tag('bannar1.jpg') %></li>
+        <li><%= image_tag('bannar2.jpg') %></li>
+        <li><%= image_tag('bannar3.jpg') %></li>
+      </ul>
+    <h1>きっとみつかる、<br class="br">行きたくなる町。</h1>
+      <div class="search">
+      <%= search_form_for @q, url: search_shops_path do |f| %>
+      <div class="search-form">
+        <div class="search-form_list">
+          <%= f.text_field :address_cont, placeholder: "エリア" %>
+        </div>
+        <div class="search-form_list">
+          <%= f.select :shop_genre_eq, Shop.shop_genres.map{|k, v| [Shop.shop_genres_i18n[k], v]} %>
+        </div>
+        <div class="search-form_action">
+          <%= f.button :type => "submit" do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+    <div class="shop-lank">
+      <h2 class="lank-title">おすすめのお店</h2>
+      <ul class="lank-slider">
+        <% @shop.each do |shop| %>
+        <li>
+          <%= link_to shop_path(shop) do %>
+          <div class="shop-lank_list">
+            <div class="shop-lank_list-img"><%= attachment_image_tag shop, :image %></div>
+            <p><%= shop.name %></p>
+            <p><%= shop.access %></p>
+            <p>お気に入り：<%= shop.favorites.count %>件</p>
+          </div>
+          <% end %>
+        <% end %>
+        </li>
+      </ul>
+    </div>
+  <div class="review-list">
+    <% if @reviews.blank? %>
+    <% else %>
+    <h2 class="review-title">新着レビュー</h2>
+    <ul>
+    <% @reviews.each do |review| %>
+      <% if review.shop.admin.is_active == "invaild" %>
+      <% else %>
+      <li>
+        <div class="review-shop">
+          <p><%= link_to review.shop.name, shop_path(review.shop.id) %></p>
+        </div>
+        <div class="review_list">
+          <div class="name-create">
+            <p>
+              <% if review.customer.is_active == "invaild" %>
+              退会済みユーザー
+              <% else %>
+              <%= review.customer.nickname %>さん
+              <% end %>
+              </p>
+            <p><%= review.created_at.strftime('%Y.%m.%d') %></p>
+          </div>
+          <p class="review_title"><%= review.title %></p>
+          <p class="review_content"><%= review.content %></p>
+        </div>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+  <div class="admin-action">
+    <div class="admin-action_bg">
+      <div class="admin-action_box">
+        <h2>出店者募集中</h2>
+        <p>あなたのお店の魅力を、まちわっかに訪れるたくさんのお客様にお届けしたいと思いませんか？<br>
+        まちわっかは、様々な業種で利用が可能です。たくさんの情報が掲載できて、登録・更新も簡単にできます。また、お店のPRだけでなくホームページの変わりとしても使えます。ご興味がございましたらお気軽にご登録ください。</p>
+        <div class="new-admin-action">
+          <%= link_to "無料出店登録", new_admin_registration_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

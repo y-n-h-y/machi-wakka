@@ -1,0 +1,22 @@
+<main>
+  <div class="head">
+    <h1>商品/メニュー詳細</h1>
+  </div>
+  <div class="layer">
+    <%= link_to admin_shop_items_path do %>
+    <i class="fas fa-chevron-left">&thinsp;メニーュ/商品一覧に戻る</i>
+    <% end %>
+  </div>
+  <div class="menu-content">
+    <div class="menu-content_image">
+      <% if @item.image.nil? %>
+      <%= image_tag('no-image') %>
+      <% else %>
+      <%= attachment_image_tag @item, :image %>
+      <% end %>
+    </div>
+    <h2><%= @item.name %></h2>
+    <p><%= @item.content %></p>
+    <p>価格：¥<%= @item.tax_price %></p>
+  </div>
+</main>

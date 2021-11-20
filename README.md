@@ -25,14 +25,15 @@
 - 引っ越しをして初めて住む町を散策するとき
 
 ## 設計書
-作成が出来次第更新
+https://docs.google.com/spreadsheets/d/1R1BkRV046lmE61sBIPO4LFput4NNKm-lvwqtbsUR_jE/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1e2eL4PDZD-PB4_CmZo_LC6uW-OvB6uft/edit?usp=sharing&ouid=114183299802960069798&rtpof=true&sd=true
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/16dDWl8TZNTteFWnU8qBDgzt-J27NoMdNTtdv0om1tmc/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)
-- 言語：HTML,CSS,Ruby,SQL
+- 言語：HTML,CSS,javascript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9

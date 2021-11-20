@@ -1,0 +1,55 @@
+<main>
+  <div class="head">
+    <h1 class="head_mypage">会員マイページ</h1>
+  </div>
+  <div class="mypage-content">
+    <div class="mypage-icon">
+      <div class="mypage-icon_image"><i class="fas fa-user"></i></div>
+      <p><%= current_customer.nickname %></p>
+    </div>
+    <ul>
+      <% if @favorite.blank? %>
+      <li>
+        <div class="mypage-content_list">
+          <%= image_tag('bookmarck') %>
+          <h2>ブックマークしたお店</h2>
+        </div>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to like_customers_path do %>
+        <div class="mypage-content_list">
+          <%= image_tag('bookmarck') %>
+          <h2>ブックマークしたお店覧</h2>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% if current_customer.reviews.blank? %>
+      <li>
+        <div class="mypage-content_list">
+          <%= image_tag('review-icon') %>
+          <h2>レビュー履歴</h2>
+        </div>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to customer_reviews_path(current_customer) do %>
+        <div class="mypage-content_list">
+          <%= image_tag('review-icon') %>
+          <h2>レビュー履歴</h2>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to customer_path(current_customer) do %>
+        <div class="mypage-content_list">
+          <%= image_tag('profile-icon') %>
+          <h2>プロフィール</h2>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</main>

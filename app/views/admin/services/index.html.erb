@@ -1,0 +1,37 @@
+<main>
+  <div class="head">
+    <h1>サービス一覧</h1>
+  </div>
+  <div class="layer">
+    <%= link_to top_admin_shops_path do %>
+    <i class="fas fa-chevron-left">&thinsp;店舗トップページに戻る</i>
+    <% end %>
+  </div>
+  <div class="content-list service">
+      <div class="new-action">
+        <%= link_to new_admin_shop_service_path do %>
+        <i class="fas fa-plus">&thinsp;新規作成</i>
+        <% end %>
+      </div>
+      <ul>
+        <% @services.each do |service| %>
+        <li>
+          <h2><%= service.title %></h2>
+          <p><%= service.content %></p>
+          <div class="edit-action">
+            <p>
+              <%= link_to edit_admin_shop_service_path(@shop, service) do %>
+              <i class="far fa-edit">&thinsp;編集する</i>
+              <% end %>
+            </p>
+            <p>
+              <%= link_to admin_shop_service_path(@shop, service), method: :delete do %>
+              <i class="far fa-trash-alt">&thinsp;削除する</i>
+              <% end %>
+            </p>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+  </div>
+</main>
