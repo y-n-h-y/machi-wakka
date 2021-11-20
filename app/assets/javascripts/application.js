@@ -91,7 +91,7 @@ $(function() {
   $(".tab").on("click", function() { // tabをクリックしたらイベント発火
     $(".active").removeClass("active"); // activeクラスを消す
     $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
-    const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
+    var index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
     console.log(index)
     $(".area").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
   })
