@@ -86,7 +86,7 @@ $(document).ready(function() {
 });
 
 $(function() {
-  let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
+  let tabs = $("li").attr(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
   $(".tab").on("click", function() { // tabをクリックしたらイベント発火
     $(".active").removeClass("active"); // activeクラスを消す
     $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
