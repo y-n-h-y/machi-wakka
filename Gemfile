@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+gem 'devise'
+gem 'ransack'
+gem "jquery-rails"
+gem 'kaminari','~> 1.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,9 +56,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'devise'
 
-  gem 'kaminari','~> 1.2.1'
 
   gem "enum_help"
 
@@ -62,9 +64,7 @@ group :development do
 
   gem 'rubocop', require: false
 
-  gem "jquery-rails"
 
-  gem 'ransack'
 end
 
 group :test do
