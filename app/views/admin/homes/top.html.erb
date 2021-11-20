@@ -7,7 +7,7 @@
       <li>
         <%= link_to top_admin_shops_path do %>
         <div class="menu_content">
-          <%= image_tag asset_path('shop-create.png') %>
+          <%= image_tag('shop-create.png') %>
           <h2>店舗作成</h2>
           <p>まちわっかに公開する、店舗情報・商品やメニュー・ニュースなどを作成することができます。</p>
         </div>
@@ -16,7 +16,7 @@
       <% if @shop.blank? %>
       <li>
         <div class="menu_content">
-          <%= image_tag asset_path('shop-create.png') %>
+          <%= image_tag('shop-create.png') %>
           <h2>レビュー</h2>
           <p>お客様からいただいたレビューの内容を確認することができます。</p>
         </div>
@@ -24,7 +24,7 @@
       <% elsif @shop.reviews.blank? %>
       <li>
         <div class="menu_content">
-          <%= image_tag asset_path('user-review.png') %>
+          <%= image_tag('user-review.png') %>
           <h2>レビュー</h2>
           <p>お客様からいただいたレビューの内容を確認することができます。</p>
         </div>
@@ -33,7 +33,7 @@
       <li>
         <%= link_to admin_shop_reviews_path(@shop.id) do %>
         <div class="menu_content">
-          <%= image_tag asset_path('user-review.png') %>
+          <%= image_tag('user-review.png') %>
           <h2>レビュー（<%= @shop.reviews.count %>）</h2>
           <p>お客様からいただいたレビューの内容を確認することができます。</p>
         </div>
@@ -43,7 +43,7 @@
       <li>
         <%= link_to admin_admin_path(current_admin) do %>
         <div class="menu_content">
-          <%= image_tag asset_path('admin-icon.png') %>
+          <%= image_tag('admin-icon.png') %>
           <h2>出店者情報</h2>
           <p>出店者登録をした情報の確認と内容の編集をすることができます。</p>
         </div>
