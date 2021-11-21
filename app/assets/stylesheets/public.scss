@@ -279,9 +279,6 @@ main {
                 dd {
                   color: #555555;
                   @media screen and (max-width: 480px) {
-                    font-size: 0.8rem;
-                  }
-                  @media screen and (max-width: 330px) {
                     font-size: 0.7rem;
                   }
                 }
@@ -357,6 +354,9 @@ main {
         dd {
           font-size: 0.8rem;
           color: #555555;
+          @media screen and (max-width: 480px) {
+            font-size: 0.7rem;
+          }
         }
       }
     }
