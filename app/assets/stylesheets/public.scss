@@ -94,8 +94,19 @@ main {
             background-color: #68b6e6;
             border-radius: 50%;
             cursor: pointer;
+            @media screen and (max-width: 600px) {
+              width: 120px;
+              height: 40px;
+              border-radius: 3rem;
+            }
             .fa-search {
               color: #ffffff;
+              .sp-text {
+                display: none;
+                @media screen and (max-width: 600px) {
+                  display: inline;
+                }
+              }
             }
           }
         }
