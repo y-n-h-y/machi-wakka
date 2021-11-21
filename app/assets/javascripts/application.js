@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
 //= require_tree .
 //= require jquery
@@ -40,7 +39,6 @@ $(function() {
 
 $(function() {
   var tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
-
   $(".tab").on("click", function() { // tabをクリックしたらイベント発火
     $(".active").removeClass("active"); // activeクラスを消す
     $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
