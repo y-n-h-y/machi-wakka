@@ -77,7 +77,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.lank-slider').slick({
     autoplay: true,
-    dots: true,
     slidesToShow: 3,
     responsive: [{
         breakpoint: 768,
