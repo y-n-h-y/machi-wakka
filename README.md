@@ -37,3 +37,7 @@ https://docs.google.com/spreadsheets/d/1e2eL4PDZD-PB4_CmZo_LC6uW-OvB6uft/edit?us
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 使用素材
+- 写真AC https://www.photo-ac.com/
+- adobe stock https://stock.adobe.com/jp/
