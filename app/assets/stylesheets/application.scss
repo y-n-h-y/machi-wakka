@@ -32,7 +32,7 @@ a {
 }
 
 body {
-  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,sans-serif;
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, sans-serif;
 }
 
 header {
@@ -41,6 +41,7 @@ header {
   box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   z-index: 2;
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -48,6 +49,7 @@ header {
     width: 90%;
     margin: 0 auto;
     padding: 15px 0;
+
     .logo {
       img {
         @media screen and (max-width: 540px) {
@@ -55,11 +57,14 @@ header {
         }
       }
     }
+
     nav {
       ul {
         display: flex;
+
         li {
           padding: 0 10px;
+
           a {
             padding: 12px 27px;
             background-color: #13ae67;
@@ -69,24 +74,29 @@ header {
             color: #ffffff;
             -webkit-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out;
+
             &:hover {
               background-color: #ffffff;
               color: #13ae67;
             }
+
             @media screen and (max-width: 540px) {
               padding: 12px 12px;
               font-size: 1rem;
+
               .non-text {
                 display: none;
               }
             }
           }
         }
+
         .user-name {
           @media screen and (max-width: 540px) {
             display: none;
           }
         }
+
         .mypage-action {
           >a {
             padding: 12px 13px;
@@ -102,8 +112,37 @@ header {
   height: 68px;
 }
 
+.page-top {
+  position: fixed;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 7px rgba(124, 124, 124, 0.1);
+  right: 15px;
+  bottom: 100px;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px);
+
+  .fa-arrow-up {
+    color: #16ae37;
+  }
+}
+
+.page-top {
+  &.moveleft {
+    animation: fadeLeft 0.5s forwards;
+  }
+
+  &.moveright {
+    animation: fadeRight 0.5s forwards;
+  }
+}
+
 footer {
   background-color: #13ae67;
+
   .footer-menu {
     display: flex;
     align-items: center;
@@ -112,16 +151,46 @@ footer {
     width: 90%;
     margin: 0 auto;
     padding: 50px 0;
+
     ul {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       width: 300px;
+
       li {
         a {
           color: #ffffff;
         }
       }
     }
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
   }
 }
